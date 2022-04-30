@@ -1,9 +1,10 @@
 import React from 'react';
 
-const Indoor = () => {
+const Indoor = ({item}) => {
+    const {name} = item;
     return (
         <div>
-            
+            <h3>{name}</h3>
         </div>
     );
 };
