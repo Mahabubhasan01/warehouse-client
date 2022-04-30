@@ -1,16 +1,14 @@
 import React, { useState } from "react";
-import { useSignInWithGoogle } from "react-firebase-hooks/auth";
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
+import auth from "../../../firebase.init";
 import "./Login.css";
 const Login = () => {
-    const [name,setName] = useState('');
-    const [email,setEmail] = useState('');
+   const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
 
     // access info from form 
-    const handleName = event=>{
-        setName(event.target.value);
-    }
+    
     const handleEmail = event=>{
         setEmail(event.target.value)
     }
@@ -18,7 +16,18 @@ const Login = () => {
         setEmail(event.target.value)
     }
 
-    
+    const [
+      signInWithEmailAndPassword,
+      user,
+      loading,
+      error,
+    ] = useSignInWithEmailAndPassword(auth);
+
+    const handleSubmit = (event) =>{
+      event.preventDefault();
+      signInWithEmailAndPassword(email,password);
+      event.target.reset()
+    }
     
   const navigate = useNavigate();
   
@@ -115,7 +124,8 @@ const Login = () => {
             <p className="small">or use your email for Login:</p>
 
 
-            <form id="sign-up-form">
+      
+            <form onSubmit={handleSubmit} id="sign-up-form">
               
               <input onBlur={handleEmail} 
               type="email" placeholder="Email" required />

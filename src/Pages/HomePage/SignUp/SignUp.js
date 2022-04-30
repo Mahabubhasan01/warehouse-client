@@ -3,6 +3,8 @@ import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from "react-fi
 import { useNavigate } from "react-router-dom";
 import  '../LogIn/Login.css'
 import auth from "../../../firebase.init";
+import {  toast, ToastContainer } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css'
 
 const SignUp = () => {
     const [name,setName] = useState('');
@@ -29,9 +31,12 @@ const SignUp = () => {
       ] = useCreateUserWithEmailAndPassword(auth);
 
       const handleSubmit = (event) =>{
+          
+              toast('hello world')
           event.preventDefault();
           createUserWithEmailAndPassword(email,password);
-          console.log(email,password)
+          console.log(email,password);
+          event.target.reset()
       }
 
     // use firebase hook for social 
@@ -130,15 +135,16 @@ const SignUp = () => {
             <p className="small">or use your email for registration:</p>
             <form onSubmit={handleSubmit} id="sign-up-form">
               <input onBlur={handleName}
-               type="text" placeholder="Name" />
+               type="text" placeholder="Name"  required/>
               <input onBlur={handleEmail}
-               type="email" placeholder="Email" />
+               type="email" placeholder="Email" required/>
               <input onBlur={handlePassword}
-               type="password" placeholder="Password" />
+               type="password" placeholder="Password" required/>
 
               <button 
                className="control-button up">Sign Up</button>
             </form>
+            <ToastContainer></ToastContainer>
           </div>
         </div>
       </div>
