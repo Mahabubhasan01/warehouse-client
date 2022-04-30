@@ -11,8 +11,8 @@ import Inventory from './Pages/Inventory/Inventory';
 import ManageItems from './Pages/MangeItems/ManageItems';
 import MyItems from './Pages/MyItems/MyItems';
 import Notfound from './Pages/Shared/Notfound';
-import ProtectAuth from './Pages/Shared/ProtectAuth';
-
+/* import ProtectAuth from '../src/firebase.init'
+ */
 function App() {
   // const [products,setProducts] = useProductsHook([])
   return (
@@ -21,14 +21,12 @@ function App() {
       <Routes>
       <Route path='/' element={<Home/>}></Route>
       <Route path='/inventory' element={<Inventory/>}></Route>
-      <Route path='/signin' element={<SignUp/>}></Route>
+      <Route path='/signup' element={<SignUp/>}></Route>
       <Route path='/login' element={<Login/>}></Route>
       <Route path='/manageitems' element={<ManageItems/>}></Route>
       <Route path='additems' element={<AddItems/>}></Route>
       <Route path='myitems' element={
-        <ProtectAuth>
           <MyItems/>
-        </ProtectAuth>
       }></Route>
       <Route path='*' element={<Notfound/>}></Route>
       </Routes>
