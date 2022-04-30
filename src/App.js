@@ -7,9 +7,11 @@ import Home from './Pages/HomePage/Home';
 import Login from './Pages/HomePage/LogIn/Login';
 import CustomNavbar from './Pages/HomePage/Navbar/CustomNavbar';
 import SignUp from './Pages/HomePage/SignUp/SignUp';
+import Inventory from './Pages/Inventory/Inventory';
 import ManageItems from './Pages/MangeItems/ManageItems';
 import MyItems from './Pages/MyItems/MyItems';
 import Notfound from './Pages/Shared/Notfound';
+import ProtectAuth from './Pages/Shared/ProtectAuth';
 
 function App() {
   // const [products,setProducts] = useProductsHook([])
@@ -18,12 +20,16 @@ function App() {
       <CustomNavbar></CustomNavbar>
       <Routes>
       <Route path='/' element={<Home/>}></Route>
-      <Route path='/inventory' element></Route>
+      <Route path='/inventory' element={<Inventory/>}></Route>
       <Route path='/signin' element={<SignUp/>}></Route>
       <Route path='/login' element={<Login/>}></Route>
       <Route path='/manageitems' element={<ManageItems/>}></Route>
       <Route path='additems' element={<AddItems/>}></Route>
-      <Route path='myitems' element={<MyItems/>}></Route>
+      <Route path='myitems' element={
+        <ProtectAuth>
+          <MyItems/>
+        </ProtectAuth>
+      }></Route>
       <Route path='*' element={<Notfound/>}></Route>
       </Routes>
       
