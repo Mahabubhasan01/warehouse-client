@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { a } from 'react-router-dom';
 
 import './Footer.css'
 const Footer = () => {
@@ -20,7 +20,7 @@ const Footer = () => {
         <div
           className="flex-shrink-0 w-64 mx-auto text-center md:mx-0 md:text-left"
         >
-          <Link to='#'
+          <a to='/'
             className="
               flex
               items-center
@@ -32,7 +32,7 @@ const Footer = () => {
             "
           >
             Logo
-          </Link >
+          </a >
           <p className="mt-2 text-sm text-justify text-gray-500">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
             at sequi cum, impedit fuga in placeat illo eum minima possimus est
@@ -57,7 +57,7 @@ const Footer = () => {
             </button>
           </div>
           <div className="flex justify-center mt-4 lg:mt-2">
-            <Link to="#">
+            <a to="/">
               <svg
                 fill="currentColor"
                 strokeLinecap="round"
@@ -70,8 +70,8 @@ const Footer = () => {
                   d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
                 ></path>
               </svg>
-            </Link>
-            <Link className="ml-3" to="">
+            </a>
+            <a className="ml-3" to="/">
               <svg
                 fill="currentColor"
                 strokeLinecap="round"
@@ -84,8 +84,8 @@ const Footer = () => {
                   d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
                 ></path>
               </svg>
-            </Link>
-            <Link className="ml-3" to="#">
+            </a>
+            <a className="ml-3" to="/">
               <svg
                 fill="none"
                 stroke="currentColor"
@@ -100,8 +100,8 @@ const Footer = () => {
                   d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"
                 ></path>
               </svg>
-            </Link>
-            <Link className="ml-3" to="#">
+            </a>
+            <a className="ml-3" to="/">
               <svg
                 fill="currentColor"
                 stroke="currentColor"
@@ -117,64 +117,64 @@ const Footer = () => {
                 ></path>
                 <circle cx="4" cy="4" r="2" stroke="none"></circle>
               </svg>
-            </Link>
+            </a>
           </div>
         </div>
         <div className="justify-between w-full mt-4 text-center lg:flex">
           <div className="w-full px-4 lg:w-1/3 md:w-1/2">
             <h2 className="mb-2 font-bold tracking-widest text-gray-900">
-              Useful Links
+              Useful as
             </h2>
             <ul className="mb-8 space-y-2 text-sm list-none">
               <li>
-                <Link to="#" className="text-gray-600 hover:text-gray-800">Home</Link>
+                <a to="/home" className="text-gray-600 hover:text-gray-800">Home</a>
               </li>
               <li>
-                <Link to="#" className="text-gray-600 hover:text-gray-800">About Us</Link>
+                <a to="/home" className="text-gray-600 hover:text-gray-800">About Us</a>
               </li>
               <li>
-                <Link className="text-gray-600 hover:text-gray-800">Blogs</Link>
+                <a to="/home" className="text-gray-600 hover:text-gray-800">Blogs</a>
               </li>
               <li>
-                <Link to="" className="text-gray-600 hover:text-gray-800">Contact Us</Link>
+                <a to="/home" className="text-gray-600 hover:text-gray-800">Contact Us</a>
               </li>
             </ul>
           </div>
           <div className="w-full px-4 lg:w-1/3 md:w-1/2">
             <h2 className="mb-2 font-bold tracking-widest text-gray-900">
-              Useful Links
+              Useful as
             </h2>
             <ul className="mb-8 space-y-2 text-sm list-none">
               <li>
-                <Link to="#" className="text-gray-600 hover:text-gray-800">Home</Link>
+                <a to="/home" className="text-gray-600 hover:text-gray-800">Home</a>
               </li>
               <li>
-                <Link to="#" className="text-gray-600 hover:text-gray-800">About Us</Link>
+                <a to="/home" className="text-gray-600 hover:text-gray-800">About Us</a>
               </li>
               <li>
-                <Link className="text-gray-600 hover:text-gray-800">Blogs</Link>
+                <a className="text-gray-600 hover:text-gray-800">Blogs</a>
               </li>
               <li>
-                <Link to="#" className="text-gray-600 hover:text-gray-800">Contact Us</Link>
+                <a to="/home" className="text-gray-600 hover:text-gray-800">Contact Us</a>
               </li>
             </ul>
           </div>
           <div className="w-full px-4 lg:w-1/3 md:w-1/2">
             <h2 className="mb-2 font-bold tracking-widest text-gray-900">
-              Useful Links
+              Useful as
             </h2>
             <ul className="mb-8 space-y-2 text-sm list-none">
               <li>
-                <Link to="#" className="text-gray-600 hover:text-gray-800">Home</Link>
+                <a to="/home" className="text-gray-600 hover:text-gray-800">Home</a>
               </li>
               <li>
-                <Link to="#" className="text-gray-600 hover:text-gray-800">About Us</Link>
+                <a to="/home" className="text-gray-600 hover:text-gray-800">About Us</a>
               </li>
               <li>
-                <Link to="#" className="text-gray-600 hover:text-gray-800">Blogs</Link>
+                <a to="/home" className="text-gray-600 hover:text-gray-800">Blogs</a>
               </li>
               <li>
-                <Link to="#" className="text-gray-600 hover:text-gray-800">Contact Us</Link>
+                <a to="/home" className="text-gray-600 hover:text-gray-800">Contact Us</a>
               </li>
             </ul>
           </div>

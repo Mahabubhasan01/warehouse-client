@@ -8,4 +8,5 @@ const ProductsHook = () =>{
     },[]);
     return [products,setProducts];
 };
+    
 export default ProductsHook;
