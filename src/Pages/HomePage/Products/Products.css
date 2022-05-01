@@ -3,3 +3,12 @@
     grid-template-columns: repeat(3,1fr);
     grid-gap: 10px;
 }
+.single-card{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.card-box img{
+    height: 250px;
+    width: 250px;
+    margin: 0 auto;
+    
+}

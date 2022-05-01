@@ -14,6 +14,7 @@ import SignUp from "./Pages/HomePage/SignUp/SignUp";
 import Inventory from "./Pages/Inventory/Inventory";
 import ManageItems from "./Pages/MangeItems/ManageItems";
 import MyItems from "./Pages/MyItems/MyItems";
+import Contact from "./Pages/Shared/Contact";
 import Notfound from "./Pages/Shared/Notfound";
 import ProtectAuth from "./Pages/Shared/ProtectAuth";
 /* import ProtectAuth from '../src/firebase.init'
@@ -58,6 +59,7 @@ function App() {
         <Route path="*" element={<Notfound />}></Route>
       </Routes>
 
+          <Contact></Contact>
       <Footer></Footer>
       <ToastContainer></ToastContainer>
       {/* https://stackoverflow.com/questions/72066947/react-usestate-useeffect?noredirect=1#comment127337560_72066947 */}
