@@ -1,5 +1,5 @@
 import React from "react";
-
+import './Banner.css'
 const Banner = () => {
   return (
     <div>
@@ -26,48 +26,46 @@ const Banner = () => {
             data-bs-slide-to="2"
             aria-label="Slide 1"
           ></button>
+
+          
         </div>
 
         <div class="carousel-inner relative w-full overflow-hidden">
+        
           <div class="carousel-item active relative float-left w-full">
             <img
               src="https://i.ibb.co/0FdYyyF/banner1.webp"
               class="block w-full"
               alt="Motorbike Smoke"
             />
-            <div class="carousel-caption hidden md:block absolute text-center">
-              <h5 class="text-xl">First slide label</h5>
-              <p>
-                Some representative placeholder content for the first slide.
-              </p>
+            
+            <div class="carousel-caption hidden md:block absolute text-left mb-40 ">
+              <p className="">“As time goes by the memories of sitting on the edge of a bed and 
+                <br /> reading aloud with your kid are going to be very meaningful <br /> in your own mental scrapbook.”</p>
+              <h5 class="text-2xl"><button class="btn mt-4">Explore more</button></h5>
             </div>
           </div>
-
           <div class="carousel-item relative float-left w-full">
             <img
-              src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(35).webp"
+              src="https://i.ibb.co/c6nDyNc/banner.webp"
               class="block w-full"
               alt="Mountaintop"
             />
-            <div class="carousel-caption hidden md:block absolute text-center">
-              <h5 class="text-xl">Second slide label</h5>
-              <p>
-                Some representative placeholder content for the second slide.
-              </p>
+            <div class="carousel-caption hidden md:block absolute text-left mb-40">
+              <p>“All of my youth growing up in my Italian family was focused <br /> around the table. That’s where I learned about love.”</p>
+              <h5 class="text-2xl"><button class="btn mt-4">Explore more</button></h5>
             </div>
           </div>
 
           <div class="carousel-item relative float-left w-full">
             <img
-              src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(40).webp"
+              src="https://i.ibb.co/0FdYyyF/banner1.webp"
               class="block w-full"
               alt="Woman Reading a Book"
             />
-            <div class="carousel-caption hidden md:block absolute text-center">
-              <h5 class="text-xl">Third slide label</h5>
-              <p>
-                Some representative placeholder content for the third slide.
-              </p>
+           <div class="carousel-caption hidden md:block absolute text-left mb-40">
+              <p>“Our family dinner table was my first platform – every dinner was <br /> all about sharing stories and jokes and points of view.” <br /> Phoebe Waller-Bridge</p>
+              <h5 class="text-2xl"><button class="btn mt-4">Explore more</button></h5>
             </div>
           </div>
         </div>
