@@ -4,7 +4,7 @@ import "./Contact.css";
 const Contact = () => {
   return (
     <div className="contact-box">
-      <div class="container">
+      <div class="container-contact">
         <div class="content">
           <div class="left-side">
             <div class="address details">
@@ -39,6 +39,9 @@ const Contact = () => {
               </div>
               <div class="input-box">
                 <input type="text" placeholder="Enter your email" />
+              </div>
+              <div class="input-box">
+                <textarea rows="4" cols="100" type="text" placeholder="Write your message" />
               </div>
               <div class="input-box message-box"></div>
               <div class="button">

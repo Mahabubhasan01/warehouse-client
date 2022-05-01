@@ -7,12 +7,13 @@ const Office = ({ item1 }) => {
       <div class="card single-card">
         <img class="card-img-top" src={img} alt="" />
         <div class="card-body">
-          <h5 class="card-title">{name}</h5>
+          <h5 class="card-title">Name : {name}</h5>
           <p class="card-text">{info} </p>
+        <p>Price : ${price}</p>
+        <p>Supplier : {supplier}</p>
+        <button className="btn-product">Buy Now</button>
         </div>
-        <div class="card-footer">
-          <small class="text-muted">{supplier}</small>
-        </div>
+       
       </div>
     </div>
   );

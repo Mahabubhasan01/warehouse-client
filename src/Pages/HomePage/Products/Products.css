@@ -4,11 +4,29 @@
     grid-gap: 10px;
 }
 .single-card{
+    height: 550px;
+    width: 350px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .card-box img{
-    height: 250px;
-    width: 250px;
+    height: 200px;
+    width: 200px;
     margin: 0 auto;
     
+}
+.btn-product{
+    border: 2px solid #1f2937;
+    border-radius: 20px;
+    margin-top: 4px;
+    width: 100px;
+    height: 35px;
+    bottom: 0;
+    position:absolute;
+    margin-bottom: 10px;
+    margin-left: 100px;
+    
+}
+.btn-product:hover{
+    background-color: #1f2937;
+    color: rgb(255, 246, 246);
 }
