@@ -6,11 +6,12 @@ import Product1 from './Product/Product1';
 import Indoor from './totalProduct/Indoor/Indoor';
 import Office from './totalProduct/Office/Office';
 import Outdoor from './totalProduct/Outdoor/Outdoor';
+import CustomNavbar from '../Navbar/CustomNavbar';
 
 
 const Products = () => {
     const [product] = useProductsHook([]);
-    const [products,allProduct] = useProductsHook([])
+    const [products,allProduct] = useProductsHook([]);
     console.log(allProduct)
     
     return (
@@ -32,7 +33,9 @@ const Products = () => {
                 }
             </div>
                 {/* extra section all product or sub routing  */}
-            <div>
+                <CustomNavbar></CustomNavbar>
+                
+            <div className='flex'>
                 {
                     allProduct.slice(0,6).map(item=>
                         <Indoor
@@ -42,7 +45,7 @@ const Products = () => {
                         )
                 }
             </div>
-            <div>
+            <div className='flex'>
                 {
                     allProduct.slice(6,12).map(item1=>
                     <Office
@@ -55,7 +58,7 @@ const Products = () => {
                 }
 
             </div>
-            <div>
+            <div className='flex'>
                 {
                     allProduct.slice(10,16).map(item2=>
                         <Outdoor

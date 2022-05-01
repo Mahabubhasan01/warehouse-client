@@ -4,6 +4,9 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import Login from '../LogIn/Login';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
+import {  signOut } from 'firebase/auth';
 
 const navigation = [
   { name: 'Dashboard', to: '/', current: true },
@@ -22,6 +25,7 @@ function classNames(...classes) {
 }
 
 export default function CustomNavbar() {
+  const [user, loading, error] = useAuthState(auth);
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
@@ -79,16 +83,18 @@ export default function CustomNavbar() {
                   <BellIcon className="h-6 w-6" aria-hidden="true" />
                 </button>
 
+               
+               
                 <button
                   type="button"
                   className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                 >
                   <span className="sr-only">View notifications</span>
-                  Name
+                  user
                 </button>
                 
-
-                {/* Profile dropdown */}
+                { user ?
+                
                 <Menu as="div" className="ml-3 relative">
                   <div>
                     <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
@@ -126,7 +132,7 @@ export default function CustomNavbar() {
                             to="/"
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
-                            Settings
+                            {user.displayName}
                           </CustomLink>
                         )}
                       </Menu.Item>
@@ -136,13 +142,14 @@ export default function CustomNavbar() {
                             to="/"
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
-                            Sign out
+                            <button onClick={() =>signOut(auth)}
+                            >Sign out</button>
                           </CustomLink>
                         )}
                       </Menu.Item>
                     </Menu.Items>
                   </Transition>
-                </Menu>
+                </Menu>:'none'}
               </div>
             </div>
           </div>

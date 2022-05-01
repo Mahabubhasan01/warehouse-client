@@ -6,8 +6,12 @@ const Product = ({product}) => {
     return (
         <div>
             <img src={img} alt="" />
+            <p>{price}</p>
             <div>
-
+            
+            <p>{quantity}</p>
+            <p>{info}</p>
+            <p>{supplier}</p>
             </div>
         </div>
     );

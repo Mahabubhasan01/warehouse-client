@@ -7,6 +7,9 @@ import Footer from "./Pages/HomePage/Footer/Footer";
 import Home from "./Pages/HomePage/Home";
 import Login from "./Pages/HomePage/LogIn/Login";
 import CustomNavbar from "./Pages/HomePage/Navbar/CustomNavbar";
+import Indoor from "./Pages/HomePage/Products/totalProduct/Indoor/Indoor";
+import Office from "./Pages/HomePage/Products/totalProduct/Office/Office";
+import Outdoor from "./Pages/HomePage/Products/totalProduct/Outdoor/Outdoor";
 import SignUp from "./Pages/HomePage/SignUp/SignUp";
 import Inventory from "./Pages/Inventory/Inventory";
 import ManageItems from "./Pages/MangeItems/ManageItems";
@@ -34,7 +37,7 @@ function App() {
           }
         ></Route>
         <Route
-          path="additems"
+          path="/additems"
           element={
             <ProtectAuth>
               <AddItems />
@@ -42,18 +45,22 @@ function App() {
           }
         ></Route>
         <Route
-          path="myitems"
+          path="/myitems"
           element={
             <ProtectAuth>
               <MyItems />
             </ProtectAuth>
           }
         ></Route>
+        <Route path="/indoor" element={<Indoor/>}></Route>
+        <Route path="/office" element={<Office/>}></Route>
+        <Route path="/outdoor" element={<Outdoor/>}></Route>
         <Route path="*" element={<Notfound />}></Route>
       </Routes>
 
       <Footer></Footer>
       <ToastContainer></ToastContainer>
+      {/* https://stackoverflow.com/questions/72066947/react-usestate-useeffect?noredirect=1#comment127337560_72066947 */}
     </div>
   );
 }

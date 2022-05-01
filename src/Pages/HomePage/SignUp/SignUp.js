@@ -36,6 +36,7 @@ const SignUp = () => {
           event.preventDefault();
           createUserWithEmailAndPassword(email,password);
           console.log(email,password);
+          navigate('/home')
           event.target.reset()
       }
 
