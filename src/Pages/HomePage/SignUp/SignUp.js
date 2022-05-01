@@ -30,14 +30,22 @@ const SignUp = () => {
         error,
       ] = useCreateUserWithEmailAndPassword(auth);
 
+      let errorText;
+
       const handleSubmit = (event) =>{
           
-              toast('hello world')
-          event.preventDefault();
+          toast('Successfully Register')
+          if(email===''){
+            return errorText='Please input some text'
+          }
+          else{
+            event.preventDefault();
           createUserWithEmailAndPassword(email,password);
           console.log(email,password);
           navigate('/home')
           event.target.reset()
+          }
+          
       }
 
     // use firebase hook for social 
@@ -137,6 +145,7 @@ const SignUp = () => {
             <form onSubmit={handleSubmit} id="sign-up-form">
               <input onBlur={handleName}
                type="text" placeholder="Name"  required/>
+               {errorText}
               <input onBlur={handleEmail}
                type="email" placeholder="Email" required/>
               <input onBlur={handlePassword}

@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from "react-firebase-hooks/auth";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
+import Loading from "../../Shared/Loading";
 import "./Login.css";
 const Login = () => {
    const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
+    const location = useLocation()
+    let from = location.state?.from?.pathname || '/'
 
     // access info from form 
     
@@ -26,10 +29,18 @@ const Login = () => {
     const handleSubmit = (event) =>{
       event.preventDefault();
       signInWithEmailAndPassword(email,password);
+
       event.target.reset()
     }
     
   const navigate = useNavigate();
+
+  if(user){
+    navigate(from,{replace:true})
+  }
+  if(loading){
+    return <Loading></Loading>
+  }
   
   return (
     <div>
