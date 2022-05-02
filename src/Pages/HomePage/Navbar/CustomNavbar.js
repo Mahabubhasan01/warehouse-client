@@ -53,7 +53,7 @@ export default function CustomNavbar() {
                     src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
                     alt="Workflow"
                   /> */}
-                  <span className="text-white logo">Eco Life</span>
+                  <span className="text-white logo" to='/home'>Eco Life</span>
                   {/* <img
                     className="hidden lg:block h-10 w-auto"
                     src="https://i.ibb.co/fdw3Qtn/logo.png"
@@ -93,7 +93,7 @@ export default function CustomNavbar() {
                   type="button"
                   className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                 >
-                  <span className="sr-only">View notifications</span>
+                  <span className="sr-only">View User</span>
                   user
                 </button>
 

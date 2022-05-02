@@ -19,7 +19,7 @@ const Products = () => {
         ))}
       </div>
       <div className=" container products mt-6">
-        {product.slice(3, 6).map((p) => (
+        {product.slice(7, 10).map((p) => (
           <Product1 key={p._id} product1={p}></Product1>
         ))}
       </div>

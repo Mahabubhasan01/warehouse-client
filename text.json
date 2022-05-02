@@ -1,0 +1,82 @@
+[
+    {
+        "name":"1 Tulip Chair. Eero Saarinen.",
+        "img":"https://i.ibb.co/7SgN4g5/11.jpg",
+        "price":"99",
+         "quantity":"1",
+         "info":"Finnish-American architect and designer Eero Saarinen famously hated the sight of many table and chair legs in a room, confusing, unrestful world.",
+         "supplier":"Ashley HomeStore"
+    }
+    ,{
+        "name":" Wishbone Chair. Hans Wegner.",
+        "img":"https://i.ibb.co/V9Gx0QG/1.webp",
+        "price":"159",
+         "quantity":"1",
+         "info":" Danish designer Hans Wegner saw a series of photographs of Chinese tradesmen—and became fascinated with the chairs on which they were sitting.",
+         "supplier":"Restoration Hardware"
+    }
+    ,{
+        "name":" Eames LCW Chair. ",
+        "img":"https://i.ibb.co/JtdYx3D/2.jpg",
+        "price":"199",
+         "quantity":"1",
+         "info":"Given that the Ming dynasty ruled China from 1368 to 1644, there's a wide range of furniture styles from the period",
+         "supplier":"IKEA"
+    }
+    ,{
+        "name":"5 Eames Lounge Chair.",
+        "img":"https://i.ibb.co/pvJ3gp8/3.jpg",
+        "price":"120",
+         "quantity":"1",
+         "info":"After graduating from the prestigious Cranbrook Academy in Michigan, designer couple Charles and Ray Eames moved to Los Angele.",
+         "supplier":"Williams-Sonoma"
+    }
+    ,{
+        "name":"6 Navy Chair.",
+        "img":"https://i.ibb.co/m6vCnCd/5.jpg",
+        "price":"129",
+         "quantity":"1",
+         "info":"While the Eameses are best-known for their efforts to create inexpensive furniture pieces that could be easily mass-produced.",
+         "supplier":"KARTELL"
+    }
+    ,{
+        "name":"7 Panton Chair. ",
+        "img":"https://i.ibb.co/hFWK5XG/6.jpg",
+        "price":"133",
+         "quantity":"1",
+         "info":"You've likely seen this chair at your local big-box store: Widely knocked-off, the original Navy chair was first Pennsylvania brand",
+         "supplier":"La-Z-Boy Furniture Galleries"
+    }
+    ,{
+        "name":"Yoruba Chair. ",
+        "img":"https://i.ibb.co/tcLZmG0/7.png",
+        "price":"149",
+         "quantity":"1",
+         "info":"In the 1960s, designer Verner Panton began to experiment with an innovative, new product: plastic. Captivated by its flexibility.",
+         "supplier":"Raymour & Flanigan"
+    }
+    ,{
+        "name":"Cesca Chair. DWR.",
+        "img":"https://i.ibb.co/MCc4cxG/8.jpg",
+        "price":"159",
+         "quantity":"1",
+         "info":"Stunningly intricate in design, these armchairs, native to the Yoruba tribes of Western Africa, are covered in a pattern created entirely from beads",
+         "supplier":"American Signature"
+    }
+    ,{
+        "name":"Louis XIV Armchair ",
+        "img":"https://i.ibb.co/wpLLYcp/9.jpg",
+        "price":"169",
+         "quantity":"1",
+         "info":"By the reign of Louis XV (1715 - 1774), chairs had evolved to take on more curvaceous shapes, with slanted backs and bowed, cabriole leg",
+         "supplier":"Roche Bobois"
+    }
+    ,{
+        "name":"Barcelona Chair",
+        "img":"https://i.ibb.co/mNqKN3t/10.png",
+        "price":"199",
+         "quantity":"1",
+         "info":"When tasked with furnishing the German pavilion at the 1929 Barcelona International Exposition, German-American architect Mies van der Rohe.",
+         "supplier":"Ethan Allen"
+    }
+]
