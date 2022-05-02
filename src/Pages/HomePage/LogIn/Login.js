@@ -1,47 +1,45 @@
 import React, { useState } from "react";
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from "react-firebase-hooks/auth";
+import {
+  useSignInWithEmailAndPassword,
+  useSignInWithGoogle,
+} from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import Loading from "../../Shared/Loading";
 import "./Login.css";
 const Login = () => {
-   const [email,setEmail] = useState('');
-    const [password,setPassword] = useState('');
-    const location = useLocation()
-    let from = location.state?.from?.pathname || '/'
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
 
-    // access info from form 
-    
-    const handleEmail = event=>{
-        setEmail(event.target.value)
-    }
-    const handlePassword = event=>{
-        setEmail(event.target.value)
-    }
+  // access info from form
 
-    const [
-      signInWithEmailAndPassword,
-      user,
-      loading,
-      error,
-    ] = useSignInWithEmailAndPassword(auth);
+  const handleEmail = (event) => {
+    setEmail(event.target.value);
+  };
+  const handlePassword = (event) => {
+    setPassword(event.target.value);
+  };
 
-    const handleSubmit = (event) =>{
-      event.preventDefault();
-      signInWithEmailAndPassword(email,password);
-
-      event.target.reset()
-    }
-    
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
   const navigate = useNavigate();
 
-  if(user){
-    navigate(from,{replace:true})
+  if (user) {
+    navigate(from, { replace: true });
   }
-  if(loading){
-    return <Loading></Loading>
+  if (loading) {
+    return <Loading></Loading>;
   }
-  
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    signInWithEmailAndPassword(email, password);
+
+    event.target.reset();
+  };
+
   return (
     <div>
       <div className="container-fluid login-box">
@@ -134,14 +132,19 @@ const Login = () => {
             </div>
             <p className="small">or use your email for Login:</p>
 
-
-      
             <form onSubmit={handleSubmit} id="sign-up-form">
-              
-              <input onBlur={handleEmail} 
-              type="email" placeholder="Email" required />
-              <input onBlur={handlePassword} required
-              type="password" placeholder="Password" />
+              <input
+                onBlur={handleEmail}
+                type="email"
+                placeholder="Email"
+                required
+              />
+              <input
+                onBlur={handlePassword}
+                required
+                type="password"
+                placeholder="Password"
+              />
 
               <button className="control-button up">Login</button>
             </form>

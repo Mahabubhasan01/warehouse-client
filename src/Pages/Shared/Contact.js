@@ -1,7 +1,26 @@
 import React from "react";
+import { toast } from "react-toastify";
 import "./Contact.css";
 
 const Contact = () => {
+  const handleContact = event=>{
+    event.preventDefault()
+    const name = event.target.name.value;
+    const email = event.target.email.value;
+    const text = event.target.message.value;
+    const contactInfo = {name,email,text}
+    const url = `http://localhost:5000/contact`
+    fetch(url,{
+      method : 'POST',
+      headers:{
+        'content-type': 'application/json'
+      },
+      body:JSON.stringify(contactInfo)
+    }).then(res=>res.json()).then(result=>{console.log(result)})
+
+    event.target.reset();
+    toast('Thanks for your feedback')
+  }
   return (
     <div className="contact-box">
       <div className="container-contact">
@@ -22,8 +41,8 @@ const Contact = () => {
             <div className="email details">
               <i className="fas fa-envelope"></i>
               <div className="topic">Email</div>
-              <div className="text-one">codinglab@gmail.com</div>
-              <div className="text-two">info.codinglab@gmail.com</div>
+              <div className="text-one">Cleverprogrammer@gmail.com</div>
+              <div className="text-two">info.cleveprogrammer@gmail.com</div>
             </div>
           </div>
           <div className="right-side">
@@ -33,15 +52,16 @@ const Contact = () => {
               tutorial, you can send me message from here. It's my pleasure to
               help you.
             </p>
-            <form action="#">
+            <form onSubmit={handleContact}>
               <div className="input-box">
-                <input type="text" placeholder="Enter your name" />
+                <input name="name" type="text" placeholder="Enter your name" />
               </div>
               <div className="input-box">
-                <input type="text" placeholder="Enter your email" />
+                <input name="email" type="email" placeholder="Enter your email" />
               </div>
               <div className="input-box">
                 <textarea
+                name="message"
                   rows="4"
                   cols="100"
                   type="text"

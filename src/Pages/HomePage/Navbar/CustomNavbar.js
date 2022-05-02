@@ -15,7 +15,7 @@ const navigation = [
   { name: "Manage Items", to: "/manageitems", current: false },
   { name: "Add Items", to: "/additems", current: false },
   { name: "My Items", to: "/myitems", current: false },
-  { name: "Blog", to: "/blog", current: false },
+  { name: "Blog", to: "/b", current: false },
   { name: "Join", to: "/signup", current: false },
   { name: "Login", to: "/login", current: false },
 ];

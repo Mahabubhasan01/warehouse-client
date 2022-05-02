@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
+/* import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth"; */
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -12,7 +12,7 @@ import { getAuth } from "firebase/auth";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-const firebaseConfig = {
+/* const firebaseConfig = {
   apiKey: "AIzaSyD6XMg2mh1st3gicB2i2Fu0kkiLIlgswHI",
   authDomain: "eco-hub-client.firebaseapp.com",
   projectId: "eco-hub-client",
@@ -22,10 +22,9 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig); */
 
-const auth = getAuth(app);
-export default auth;
+
 
 
 /* const firebaseConfig = {
@@ -41,3 +40,26 @@ export default auth;
 // Initialize Firebase
 const app = initializeApp(firebaseConfig); */
 
+
+
+// update 
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyA94riFmqeslxE5yy_7N0rQZHhwl5XroGM",
+  authDomain: "eco-hub-eb09e.firebaseapp.com",
+  projectId: "eco-hub-eb09e",
+  storageBucket: "eco-hub-eb09e.appspot.com",
+  messagingSenderId: "846343240541",
+  appId: "1:846343240541:web:ef588f1a24f0d7fc3786b4"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+export default auth;
