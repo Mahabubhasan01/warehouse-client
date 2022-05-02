@@ -14,6 +14,13 @@
     margin: 0 auto;
     
 }
+.hr{
+    margin: 0 auto;
+    width: 180px;
+    border-bottom: 2px solid #1f2937;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
 .btn-product{
     border: 2px solid #1f2937;
     border-radius: 20px;
