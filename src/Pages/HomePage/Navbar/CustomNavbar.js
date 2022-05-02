@@ -56,7 +56,7 @@ export default function CustomNavbar() {
                     src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
                     alt="Workflow"
                   /> */}
-                  <span className="text-white logo" to='/home'>Eco Life</span>
+                  <span className="text-white nav-logo" to='/home'>Eco Life</span>
                   {/* <img
                     className="hidden lg:block h-10 w-auto"
                     src="https://i.ibb.co/fdw3Qtn/logo.png"
