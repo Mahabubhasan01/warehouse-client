@@ -2,6 +2,9 @@ import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "./App.css";
 import AddItems from "./Pages/AddItems/AddItems";
+import Blog from "./Pages/HomePage/Blogs/Blog/Blog";
+import BlogDetail from "./Pages/HomePage/Blogs/BlogDetail/BlogDetail";
+import Blogs from "./Pages/HomePage/Blogs/Blogs";
 // import useProductsHook from './Pages/CustomHooks/ProductsHook'
 import Footer from "./Pages/HomePage/Footer/Footer";
 import Home from "./Pages/HomePage/Home";
@@ -56,6 +59,8 @@ function App() {
         <Route path="/indoor" element={<Indoor/>}></Route>
         <Route path="/office" element={<Office/>}></Route>
         <Route path="/outdoor" element={<Outdoor/>}></Route>
+        <Route path="/blog" element={<Blog></Blog>}></Route>
+        <Route path="/blogs/:id" element={<Blogs></Blogs>}></Route>
         <Route path="*" element={<Notfound />}></Route>
       </Routes>
 
