@@ -8,6 +8,7 @@ import auth from "../../../firebase.init";
 import { signOut } from "firebase/auth";
 import Loading from "../../Shared/Loading";
 import './CustomNavbar.css'
+import { Link } from "react-router-dom";
 
 const navigation = [
   { name: "Home", to: "/", current: true },
@@ -15,7 +16,7 @@ const navigation = [
   { name: "Manage Items", to: "/manageitems", current: false },
   { name: "Add Items", to: "/additems", current: false },
   { name: "My Items", to: "/myitems", current: false },
-  { name: "Blog", to: "/b", current: false },
+  { name: "Blogs", to: "/blog", current: false },
   { name: "Join", to: "/signup", current: false },
   { name: "Login", to: "/login", current: false },
 ];
@@ -26,6 +27,7 @@ function classNames(...classes) {
 
 export default function CustomNavbar() {
   const [user, loading, error] = useAuthState(auth);
+  console.log(user)
   if(loading){
     return <Loading></Loading>
   }
@@ -95,7 +97,7 @@ export default function CustomNavbar() {
                   className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                 >
                   <span className="sr-only">View User</span>
-                  user
+                  {user?.displayName?.split(' ')}
                 </button>
 
                 {user ? (
@@ -105,7 +107,7 @@ export default function CustomNavbar() {
                         <span className="sr-only">Open user menu</span>
                         <img
                           className="h-8 w-8 rounded-full"
-                          src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                          src={user.photoURL}
                           alt=""
                         />
                       </Menu.Button>
@@ -129,7 +131,7 @@ export default function CustomNavbar() {
                                 "block px-4 py-2 text-sm text-gray-700"
                               )}
                             >
-                              Your Profile
+                              <Link to='/profile'>Your profile</Link>
                             </CustomLink>
                           )}
                         </Menu.Item>

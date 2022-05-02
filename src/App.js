@@ -19,6 +19,7 @@ import ManageItems from "./Pages/MangeItems/ManageItems";
 import MyItems from "./Pages/MyItems/MyItems";
 import Contact from "./Pages/Shared/Contact";
 import Notfound from "./Pages/Shared/Notfound";
+import Profile from "./Pages/Shared/Profile";
 import ProtectAuth from "./Pages/Shared/ProtectAuth";
 /* import ProtectAuth from '../src/firebase.init'
  */
@@ -61,10 +62,11 @@ function App() {
         <Route path="/outdoor" element={<Outdoor/>}></Route>
         <Route path="/blog" element={<Blog></Blog>}></Route>
         <Route path="/blogs/:id" element={<Blogs></Blogs>}></Route>
+        <Route path="/profile" element={<Profile></Profile>}></Route>
         <Route path="*" element={<Notfound />}></Route>
       </Routes>
 
-          <Contact></Contact>
+      <Contact></Contact>
       <Footer></Footer>
       <ToastContainer></ToastContainer>
       {/* https://stackoverflow.com/questions/72066947/react-usestate-useeffect?noredirect=1#comment127337560_72066947 */}
