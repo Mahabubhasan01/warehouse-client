@@ -10,6 +10,8 @@ import Footer from "./Pages/HomePage/Footer/Footer";
 import Home from "./Pages/HomePage/Home";
 import Login from "./Pages/HomePage/LogIn/Login";
 import CustomNavbar from "./Pages/HomePage/Navbar/CustomNavbar";
+import Product from "./Pages/HomePage/Products/Product/Product";
+import Product1 from "./Pages/HomePage/Products/Product/Product1";
 import Indoor from "./Pages/HomePage/Products/totalProduct/Indoor/Indoor";
 import Office from "./Pages/HomePage/Products/totalProduct/Office/Office";
 import Outdoor from "./Pages/HomePage/Products/totalProduct/Outdoor/Outdoor";
@@ -30,11 +32,13 @@ function App() {
       <CustomNavbar></CustomNavbar>
       <Routes>
         <Route path="/" element={<Home />}></Route>
+        <Route path="/home" element={<Home />}></Route>
+        
         <Route path="/inventory" element={<Inventory />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route
-          path="/manageitems"
+          path="/manageitems/:id"
           element={
             <ProtectAuth>
               <ManageItems />

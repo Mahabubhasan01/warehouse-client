@@ -22,8 +22,9 @@
     border-bottom-right-radius: 10px;
 }
 .btn-product{
-    border: 2px solid #1f2937;
-    border-radius: 20px;
+    background-color: #3e2093;
+    color: #fff;
+    border-radius: 10px;
     margin-top: 4px;
     width: 100px;
     height: 35px;
@@ -31,9 +32,15 @@
     position:absolute;
     margin-bottom: 10px;
     margin-left: 100px;
+    font-weight:300;
     
 }
 .btn-product:hover{
     background-color: #1f2937;
     color: rgb(255, 246, 246);
+}
+.btn-product:focus{
+    background-color: slategray;
+    cursor:no-drop;
+    color: #1f2937;
 }
