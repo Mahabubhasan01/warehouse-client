@@ -16,7 +16,16 @@
     
 }
 
+.btn-add{
+    margin-left: 600px;
+    background-color: #3e2093;
+    border-radius: 20px;
+    width: 200px;
+    height: 35px;
+    color: white;
+    margin-bottom: 5px;
 
+}
 .hr{
     margin: 0 auto;
     width: 180px;

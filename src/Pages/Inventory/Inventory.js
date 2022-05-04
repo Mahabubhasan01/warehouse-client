@@ -1,9 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import useProductsHook from '../CustomHooks/ProductsHook'
 import Items from './Items/Items';
 
 const Inventory = () => {
     const [products] = useProductsHook();
+    const navigate = useNavigate()
     console.log(products)
 
     
@@ -17,7 +19,8 @@ const Inventory = () => {
                 ></Items>)
             }
         </div>
-        <p><button className='btn-add '>Add new items</button></p>
+        <p><button onClick={()=>navigate('/additems')}
+         className='btn-add '>Add new items</button></p>
         </div>
         
     );

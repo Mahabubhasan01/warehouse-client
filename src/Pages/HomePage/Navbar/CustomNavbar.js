@@ -13,12 +13,13 @@ import { Link } from "react-router-dom";
 const navigation = [
   { name: "Home", to: "/", current: true },
   { name: "Inventory", to: "/inventory", current: false },
+  { name: "Blogs", to: "/blog", current: false },
   { name: "Manage Items", to: "/manageitems", current: false },
   { name: "Add Items", to: "/additems", current: false },
   { name: "My Items", to: "/myitems", current: false },
-  { name: "Blogs", to: "/blog", current: false },
   { name: "Join", to: "/signup", current: false },
   { name: "Login", to: "/login", current: false },
+  
 ];
 
 function classNames(...classes) {
@@ -65,7 +66,22 @@ export default function CustomNavbar() {
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
-                    {navigation.map((item) => (
+                    {user?navigation.slice(0,6).map((item) => (
+                      <CustomLink
+                        key={item.name}
+                        to={item.to}
+                        className={classNames(
+                          item.current
+                            ? "bg-gray-900 text-white"
+                            : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                          "px-3 py-2 rounded-md text-sm font-medium"
+                        )}
+                        aria-current={item.current ? "page" : undefined}
+                      >
+                        {item.name}
+                      </CustomLink>
+                    )):
+                    navigation.map((item) => (
                       <CustomLink
                         key={item.name}
                         to={item.to}
