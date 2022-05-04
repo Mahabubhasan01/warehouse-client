@@ -1,0 +1,12 @@
+.manage-card-item{
+    margin:100px;
+}
+/* @media (min-width:576px) {
+    .manage-card-item{
+        width: 300px;
+        height: 400px;
+    }
+    .card-item{
+        display: block;
+    }
+} */

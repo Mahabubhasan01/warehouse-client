@@ -1,23 +1,23 @@
 import React from "react";
+import './Additems.css'
 
-const AddItems = () => {
+
+import { useForm } from "react-hook-form";
+
+ const AddItems=()=> {
+  const { register, handleSubmit} = useForm();
+  const onSubmit = data => console.log(data);
+
+
   return (
-    <div>
-      <form >
-        <label>
-          Pick your favorite flavor:
-          <select >
-            {" "}
-            <option value="grapefruit">Grapefruit</option>
-            <option value="lime">Lime</option>
-            <option value="coconut">Coconut</option>
-            <option value="mango">Mango</option>
-          </select>
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
-    </div>
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <input defaultValue="test" {...register("example")} />
+      
+      <input {...register("exampleRequired", { required: true })} />
+      
+      <input type="submit" />
+    </form>
   );
-};
+}
 
 export default AddItems;
