@@ -1,7 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Outdoor = ({ item2 }) => {
-  const { name, img, price, info, supplier } = item2;
+  const { name, img, price, info, supplier,_id } = item2;
+  const navigate = useNavigate()
   console.log(item2);
   return (
     <div className="col-md-4 p-20 card-box">
@@ -12,7 +14,8 @@ const Outdoor = ({ item2 }) => {
           <p className="card-text">{info} </p>
           <p>Price : {price}</p>
           <p>Supplier : {supplier}</p>
-          <button className="btn-product">Manage Item</button>
+          <p className="btn-two"><button onClick={()=>navigate('/inventory')} className="btn-product">Inventory</button>
+          <button onClick={()=>navigate(`/manageitems/${_id}`)} className="btn-product">Manage Item</button></p>
         </div>
       </div>
     </div>

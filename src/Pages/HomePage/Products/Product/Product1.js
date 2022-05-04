@@ -14,8 +14,11 @@ const Product1 = ({ product1 }) => {
           <p>Price : ${price}</p>
           <p className="card-text ">{info} </p>
           <p>Supplier : {supplier}</p>
-          <button onClick={()=>navigate(`/manageitems/${_id}`)}
-          className="btn-product">Manage Item</button>
+          <div>
+          <p className="btn-two"><button onClick={()=>navigate('/inventory')} className="btn-product">Inventory</button>
+          <button onClick={()=>navigate(`/manageitems/${_id}`)} className="btn-product">Manage Item</button></p>
+         
+          </div>
         </div>
       </div>
     </div>

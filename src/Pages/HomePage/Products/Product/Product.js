@@ -14,7 +14,9 @@ const Product = ({ product }) => {
           <p>Price : ${price}</p>
           <p className="card-text ">{info} </p>
           <p>Supplier : {supplier}</p>
-          <button onClick={()=>navigate(`/manageitems/${_id}`)} className="btn-product">Manage Item</button>
+          <p className="btn-two"><button onClick={()=>navigate('/inventory')} className="btn-product">Inventory</button>
+          <button onClick={()=>navigate(`/manageitems/${_id}`)} className="btn-product">Manage Item</button></p>
+         
         </div>
       </div>
     </div>

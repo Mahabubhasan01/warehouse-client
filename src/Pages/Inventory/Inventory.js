@@ -8,7 +8,8 @@ const Inventory = () => {
 
     
     return (
-        <div className='row'>
+        <div>
+            <div className='row'>
             {
                 products.slice(0,9).map(item=><Items
                 key={item._id}
@@ -16,6 +17,9 @@ const Inventory = () => {
                 ></Items>)
             }
         </div>
+        <p><button className='btn-add '>Add new items</button></p>
+        </div>
+        
     );
 };
 
