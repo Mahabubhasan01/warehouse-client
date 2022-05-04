@@ -11,9 +11,10 @@ const Inventory = () => {
     
     return (
         <div>
+            <h3 className='text-center text-2xl mt-4'>Total Items : <span className='text-green-600'>{products.length}</span></h3>
             <div className='row'>
             {
-                products.slice(0,9).map(item=><Items
+                products.map(item=><Items
                 key={item._id}
                 item={item}
                 ></Items>)

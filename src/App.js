@@ -21,6 +21,7 @@ import ManageItems from "./Pages/MangeItems/ManageItems";
 import MyItems from "./Pages/MyItems/MyItems";
 import Contact from "./Pages/Shared/Contact";
 import Notfound from "./Pages/Shared/Notfound";
+import Payment from "./Pages/Shared/Payment/Payment";
 import Profile from "./Pages/Shared/Profile";
 import ProtectAuth from "./Pages/Shared/ProtectAuth";
 /* import ProtectAuth from '../src/firebase.init'
@@ -67,6 +68,7 @@ function App() {
         <Route path="/blog" element={<Blog></Blog>}></Route>
         <Route path="/blogs/:id" element={<Blogs></Blogs>}></Route>
         <Route path="/profile" element={<Profile></Profile>}></Route>
+        <Route path="/payment" element={<Payment></Payment>}></Route>
         <Route path="*" element={<Notfound />}></Route>
       </Routes>
 

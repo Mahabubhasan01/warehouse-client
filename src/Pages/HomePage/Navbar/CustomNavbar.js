@@ -17,7 +17,7 @@ const navigation = [
   { name: "Manage Items", to: "/manageitems", current: false },
   { name: "Add Items", to: "/additems", current: false },
   { name: "My Items", to: "/myitems", current: false },
-  { name: "Join", to: "/signup", current: false },
+  {  name: "Join", to: "/signup", current: false },
   { name: "Login", to: "/login", current: false },
   
 ];
@@ -80,7 +80,8 @@ export default function CustomNavbar() {
                       >
                         {item.name}
                       </CustomLink>
-                    )):
+                    ))
+                    :
                     navigation.map((item) => (
                       <CustomLink
                         key={item.name}
