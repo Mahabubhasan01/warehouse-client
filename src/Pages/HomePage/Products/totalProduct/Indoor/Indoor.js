@@ -11,7 +11,7 @@ const Indoor = ({ item }) => {
           <p>Price : ${price}</p>
           <p className="card-text ">{info} </p>
           <p>Supplier : {supplier}</p>
-          <button className="btn-product">Buy Now</button>
+          <button className="btn-product">Manage Item</button>
         </div>
       </div>
     </div>

@@ -12,7 +12,7 @@ const Outdoor = ({ item2 }) => {
           <p className="card-text">{info} </p>
           <p>Price : {price}</p>
           <p>Supplier : {supplier}</p>
-          <button className="btn-product">Buy Now</button>
+          <button className="btn-product">Manage Item</button>
         </div>
       </div>
     </div>

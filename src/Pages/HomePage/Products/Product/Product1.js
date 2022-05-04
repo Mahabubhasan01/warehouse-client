@@ -15,7 +15,7 @@ const Product1 = ({ product1 }) => {
           <p className="card-text ">{info} </p>
           <p>Supplier : {supplier}</p>
           <button onClick={()=>navigate(`/manageitems/${_id}`)}
-          className="btn-product">Buy Now</button>
+          className="btn-product">Manage Item</button>
         </div>
       </div>
     </div>

@@ -1,7 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Items = ({ item }) => {
-  const { name, img, price, info, supplier } = item;
+  const navigation = useNavigate();
+  const { name, img, price, info, supplier,_id } = item;
   return (
     <div className="col-md-4 p-20  card-box">
       <div className="card single-card">
@@ -11,7 +13,7 @@ const Items = ({ item }) => {
           <p>Price : ${price}</p>
           <p className="card-text ">{info} </p>
           <p>Supplier : {supplier}</p>
-          <button className="btn-product">Buy Now</button>
+          <button onClick={()=>navigation(`/manageitems/${_id}`)} className="btn-product">Manage Item</button>
         </div>
       </div>
     </div>
