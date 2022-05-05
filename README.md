@@ -1,14 +1,16 @@
  <hr>
 
-# Getting Started with Create React App
+# Getting Started with Eco life
 
-..... (¯`v´¯)♥
-.......•.¸.•´
-....¸.•´
-... (
-☻/
-/▌♥♥
-/ \ ♥♥
+                                .... (¯`v´¯)♥
+                                .......•.¸.•´
+                                ....¸.•´
+                                ... (
+                                ☻/
+                                /▌♥♥
+                                / \ ♥♥
+
+<hr>
 
 
  Project Name is [Eco life](https://github.com/facebook/create-react-app).
