@@ -56,7 +56,7 @@ const SignUp = () => {
     console.log(email, password);
     toast.success('Successfully register')
    await sendEmailVerification(email,password);
-   navigate('/')
+   
     event.target.reset();
   };
   
@@ -139,7 +139,7 @@ const SignUp = () => {
                 </svg>
               </div>
               <div
-                onClick={() => signInWithGoogle(email, password)}
+                onClick={async() =>{await signInWithGoogle(email, password);navigate('/')}}
                 className="icon"
               >
                 <svg viewBox="0 0 24 24">
