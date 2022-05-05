@@ -8,7 +8,7 @@ import Outdoor from "./totalProduct/Outdoor/Outdoor";
 
 const Products = () => {
   const [product] = useProductsHook([]);
-  const [products, allProduct] = useProductsHook([]);
+  const [products,setProducts, allProduct] = useProductsHook([]);
   console.log(allProduct);
 
   return (

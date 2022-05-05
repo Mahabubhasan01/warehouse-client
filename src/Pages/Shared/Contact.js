@@ -1,13 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import { toast } from "react-toastify";
 import "./Contact.css";
 
 const Contact = () => {
+  const [name,setName] = useState('')
+  const [email,setEmail] = useState('')
+  const [text,setText] = useState('')
+  const handleEmail = e=>{
+    setEmail(e.target.value)
+  }
+  const handleName = e=>{
+    setName(e.target.value)
+  }
+  const handleText = e=>{
+    setText(e.target.value)
+  }
+  
   const handleContact = event=>{
     event.preventDefault()
-    const name = event.target.name.value;
+    console.log(handleContact)
+    /* const name = event.target.name.value;
     const email = event.target.email.value;
-    const text = event.target.message.value;
+    const text = event.target.message.value; */
     const contactInfo = {name,email,text}
     const url = `http://localhost:5000/contact`
     fetch(url,{
@@ -41,8 +55,8 @@ const Contact = () => {
             <div className="email details">
               <i className="fas fa-envelope"></i>
               <div className="topic">Email</div>
-              <div className="text-one">Cleverprogrammer@gmail.com</div>
-              <div className="text-two">info.cleveprogrammer@gmail.com</div>
+              <div className="text-one">Eco Life@gmail.com</div>
+              <div className="text-two">info.Eco Life@gmail.com</div>
             </div>
           </div>
           <div className="right-side">
@@ -54,13 +68,13 @@ const Contact = () => {
             </p>
             <form onSubmit={handleContact}>
               <div className="input-box">
-                <input name="name" type="text" placeholder="Enter your name" />
+                <input onBlur={handleName} name="name" type="text" placeholder="Enter your name" />
               </div>
               <div className="input-box">
-                <input name="email" type="email" placeholder="Enter your email" />
+                <input onBlur={handleEmail} name="email" type="email" placeholder="Enter your email" />
               </div>
               <div className="input-box">
-                <textarea
+                <textarea onBlur={handleText}
                 name="message"
                   rows="4"
                   cols="100"

@@ -33,7 +33,7 @@ function App() {
       <CustomNavbar></CustomNavbar>
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/home" element={<Home />}></Route>
+        <Route path="/home/:id" element={<Home />}></Route>
         
         <Route path="/inventory" element={<Inventory />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
