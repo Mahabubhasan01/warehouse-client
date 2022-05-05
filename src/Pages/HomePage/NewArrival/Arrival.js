@@ -12,7 +12,7 @@ const Arrival = () => {
               <div className="picture">
                 <img
                   className="img-fluid"
-                  src="https://picsum.photos/130/130?image=1027"
+                  src="https://i.ibb.co/n78Vj7t/Walnut-Sofa-Corner-Module-NEO-300517-E-2-300x300.jpg"
                   alt=""
                 />
               </div>
@@ -57,7 +57,7 @@ const Arrival = () => {
               <div className="picture">
                 <img
                   className="img-fluid"
-                  src="https://picsum.photos/130/130?image=839"
+                  src="https://i.ibb.co/NCtFX2x/arrival1.jpg"
                   alt=""
                 />
               </div>
@@ -102,7 +102,7 @@ const Arrival = () => {
               <div className="picture">
                 <img
                   className="img-fluid"
-                  src="https://picsum.photos/130/130?image=856"
+                  src="https://i.ibb.co/nBGybnq/Hotel-Lobby-Cafe-High-Chair-NEO-300426-E-1-300x300.jpg"
                   alt=" "
                 />
               </div>
@@ -147,7 +147,7 @@ const Arrival = () => {
               <div className="picture">
                 <img
                   className="img-fluid"
-                  src="https://picsum.photos/130/130?image=836"
+                  src="https://i.ibb.co/DYNmSTG/11.jpg"
                   alt=""
                 />
               </div>

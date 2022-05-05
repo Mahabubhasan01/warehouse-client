@@ -6,7 +6,7 @@ const Outdoor = ({ item2 }) => {
   const navigate = useNavigate()
   console.log(item2);
   return (
-    <div className="col-md-4 p-20 card-box">
+    <div className="col-12 col-sm-6 col-md-4 col-lg-4 my-3 mx-0 card-box">
       <div className="card single-card">
         <img className="card-img-top" src={img} alt="" />
         <div className="card-body">

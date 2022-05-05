@@ -12,7 +12,7 @@ const Inventory = () => {
     return (
         <div>
             <h3 className='text-center text-2xl mt-4'>Total Items : <span className='text-green-600'>{products.length}</span></h3>
-            <div className='row'>
+            <div className='row container my-3'>
             {
                 products.map(item=><Items
                 key={item._id}
