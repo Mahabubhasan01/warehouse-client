@@ -42,7 +42,7 @@ useSignInWithTwitter(auth);
     }
 
   if(user1||Fbuser||Twuser){
-    navigate('/')
+    navigate(from,{replace:true})
   }
   let errorMsg;
   if(error){

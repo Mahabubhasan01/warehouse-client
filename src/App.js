@@ -10,8 +10,6 @@ import Footer from "./Pages/HomePage/Footer/Footer";
 import Home from "./Pages/HomePage/Home";
 import Login from "./Pages/HomePage/LogIn/Login";
 import CustomNavbar from "./Pages/HomePage/Navbar/CustomNavbar";
-import Product from "./Pages/HomePage/Products/Product/Product";
-import Product1 from "./Pages/HomePage/Products/Product/Product1";
 import Indoor from "./Pages/HomePage/Products/totalProduct/Indoor/Indoor";
 import Office from "./Pages/HomePage/Products/totalProduct/Office/Office";
 import Outdoor from "./Pages/HomePage/Products/totalProduct/Outdoor/Outdoor";
@@ -24,18 +22,21 @@ import Notfound from "./Pages/Shared/Notfound";
 import Payment from "./Pages/Shared/Payment/Payment";
 import Profile from "./Pages/Shared/Profile";
 import ProtectAuth from "./Pages/Shared/ProtectAuth";
-/* import ProtectAuth from '../src/firebase.init'
- */
 function App() {
-  // const [products,setProducts] = useProductsHook([])
   return (
     <div>
       <CustomNavbar></CustomNavbar>
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/home/:id" element={<Home />}></Route>
-        
-        <Route path="/inventory" element={<Inventory />}></Route>
+        <Route path="/home" element={<Home />}></Route>
+        <Route
+          path="/inventory"
+          element={
+            <ProtectAuth>
+              <Inventory />
+            </ProtectAuth>
+          }
+        ></Route>
         <Route path="/signup" element={<SignUp />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route
@@ -62,9 +63,9 @@ function App() {
             </ProtectAuth>
           }
         ></Route>
-        <Route path="/indoor" element={<Indoor/>}></Route>
-        <Route path="/office" element={<Office/>}></Route>
-        <Route path="/outdoor" element={<Outdoor/>}></Route>
+        <Route path="/indoor" element={<Indoor />}></Route>
+        <Route path="/office" element={<Office />}></Route>
+        <Route path="/outdoor" element={<Outdoor />}></Route>
         <Route path="/blog" element={<Blog></Blog>}></Route>
         <Route path="/blogs/:id" element={<Blogs></Blogs>}></Route>
         <Route path="/profile" element={<Profile></Profile>}></Route>

@@ -6,7 +6,7 @@ import {
   useSignInWithGoogle,
   useSignInWithTwitter,
 } from "react-firebase-hooks/auth";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "../LogIn/Login.css";
 import auth from "../../../firebase.init";
 import { toast, ToastContainer } from "react-toastify";
@@ -15,6 +15,8 @@ import Loading from "../../Shared/Loading";
 import { async } from "@firebase/util";
 
 const SignUp = () => {
+  const location = useLocation()
+  const from = location?.state?.from?.pathname || '/'
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -42,7 +44,9 @@ const SignUp = () => {
     useCreateUserWithEmailAndPassword(auth);
 
     const [sendEmailVerification, sending, Verror] = useSendEmailVerification(auth);
-    
+    if(user||user1||Fbuser||Twuser){
+      navigate(from,{replace:true})
+    }
   
     if(loading||Fbloading||Twloading||loading1){
       return <Loading></Loading>

@@ -32,7 +32,7 @@ const Contact = () => {
       body:JSON.stringify(contactInfo)
     }).then(res=>res.json()).then(result=>{console.log(result)})
 
-    event.target.reset();
+    
     toast('Thanks for your feedback')
   }
   return (

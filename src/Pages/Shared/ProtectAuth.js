@@ -10,9 +10,9 @@ import Loading from "./Loading";
 
 const ProtectAuth = ({ children }) => {
   const [user, loading, error] = useAuthState(auth);
-  const [sendEmailVerification, sending] = useSendEmailVerification(auth);
+  /* const [sendEmailVerification, sending] = useSendEmailVerification(auth); */
   const location = useLocation();
-  console.log(user.providerData);
+  /* console.log(user.providerData); */
   if (loading) {
     return <Loading></Loading>;
   }
@@ -20,7 +20,7 @@ const ProtectAuth = ({ children }) => {
   if (!user) {
     return <Navigate to="/login" state={{ from: location }} replace />;
   }
-  if (user.providerData[0]?.providerId === "password" && !user.emailVerified) {
+  /* if (user?.providerData[0]?.providerId === "password" && !user?.emailVerified) {
     return (
       <div className="single-card mt-5">
         <h3 className="text-danger">Email is not verified</h3>
@@ -36,7 +36,7 @@ const ProtectAuth = ({ children }) => {
         </button>
       </div>
     );
-  }
+  } */
 
   return children;
 };
