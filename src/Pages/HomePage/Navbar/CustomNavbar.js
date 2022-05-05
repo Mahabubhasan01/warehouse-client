@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 const navigation = [
   { name: "Home", to: "/", current: true },
   { name: "Inventory", to: "/inventory", current: false },
-  { name: "Blogs", to: "/blog", current: false },
+  { name: "Blogs", to: "/blogs", current: false },
   { name: "Manage Items", to: "/manageitems", current: false },
   { name: "Add Items", to: "/additems", current: false },
   { name: "My Items", to: "/myitems", current: false },

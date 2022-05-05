@@ -67,7 +67,7 @@ function App() {
         <Route path="/office" element={<Office />}></Route>
         <Route path="/outdoor" element={<Outdoor />}></Route>
         <Route path="/blog" element={<Blog></Blog>}></Route>
-        <Route path="/blogs/:id" element={<Blogs></Blogs>}></Route>
+        <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/profile" element={<Profile></Profile>}></Route>
         <Route path="/payment" element={<Payment></Payment>}></Route>
         <Route path="*" element={<Notfound />}></Route>
