@@ -5,47 +5,19 @@ import useItemDetail from "../CustomHooks/useItemDetail";
 import { toast } from "react-toastify";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
-import { useForm } from "react-hook-form";
+import useMyItmes from "../CustomHooks/useMyItems";
+import CustomSubmit from "./CustomSubmit/CustomSubmit";
 
 const ManageItems = () => {
   const [user, loading, error] = useAuthState(auth);
 
-  const { register, handleSubmit } = useForm();
-
-
-  
-  const { id } = useParams();
+  let { id } = useParams();
   const [item] = useItemDetail(id);
   const navigate = useNavigate();
-
-  /* const onSubmit = (data,event) =>{
-    console.log(data)
-} */
-  const onSubmit =(data,event)=>{
-  
-    const url=`http://localhost:5000/myItems`;
-    fetch(url,{
-      method:'POST',
-      headers:{
-        'content-type':'application/json'
-      },
-      body:JSON.stringify(data)
-    }).then(res=>res.json()).then(data=>{
-      console.log(data)
-      toast('Stock out')
-      
-      toast('done')
-    })
-
-  }
+  const [addItems] = useMyItmes();
+/*   const [itemsWithQuantity] = addItems.find(items=>items.name == item.name);
+ */  console.log(addItems)
  
-    /* const quantity = parseInt(6)+item.quantity; 
-    const productInfo = {
-      name:item.name,const id = item._id
-      info:item.info,
-      supplier:item.supplier,
-/*       quantity:quantity,
- */    
   console.log(item);
   return (
     <div>
@@ -59,7 +31,7 @@ const ManageItems = () => {
             <div className="card-body">
               <h5 className="card-title">Name : {item.name}</h5>
               <p className="card-text"> Information : {item.info}</p>
-              <p className="card-text"> Quantity : {item.quantity}</p>
+              <p className="card-text"> Quantity : {addItems.length}</p>
               <p className="card-text">
                 <small className="text-muted"> Supplier : {item.supplier}</small>
                 
@@ -73,66 +45,7 @@ const ManageItems = () => {
         </div>
       </div>
     </div>
-
-    {/* addProduct */}
-    <div className="w-50 mx-auto form-box container-fluid">
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <input
-          placeholder=""
-          value={user.email} readOnly 
-          
-          className="my-3"
-          {...register("email",{ required: true })}
-        />
-        <p>Product Name</p>
-
-        <input
-          placeholder="Enter your product name"
-          /* value={item.name} */
-          className="my-3"
-          {...register("name",{ required: true })}
-        />
-        <p>Product Info</p>
-        <input
-          placeholder="Enter product info"
-          /* value={item.info} */
-          className="mb-3 p-5"
-          {...register("info")}
-        />
-        <p>Prices</p>
-        
-        <input 
-        /* value={item.price} */
-         placeholder="Price" className="mb-3" {...register("price",{ required: true })} />
-        {/* <p>Product Id</p>
-        
-        <input value={item._id} placeholder="Price" className="mb-3" {...register("price",{ required: true })} /> */}
-        <p>Quantity</p>
-        <input
-          placeholder="quantity"
-          className="mb-3"
-          {...register("quantity",{ required: true })}
-        />
-        <p>Image url</p>
-
-        <input 
-        /* value={item.img} */
-          placeholder="photo url"
-          className="mb-3"
-          {...register("img", { required: true })}
-        />
-        <p>Supplier</p>
-
-        <input
-        /*  value={item.supplier} */
-          placeholder="photo url"
-          className="mb-3"
-          {...register("supplier", { required: true })}
-        />
-
-        <input type="submit" />
-      </form>
-    </div>
+    <CustomSubmit></CustomSubmit>
     </div>
   );
 };
