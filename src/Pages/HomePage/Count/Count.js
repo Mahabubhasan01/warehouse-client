@@ -7,6 +7,7 @@ import './Count.css'
   const countUpRef = React.useRef(null);
   const { start, pauseResume, reset, update } = useCountUp({
     ref: countUpRef,
+    ref1:countUpRef,
     start: 0,
     end: 1234567,
     delay: 0,
@@ -20,10 +21,10 @@ import './Count.css'
   return (
     <div>
       <div ref={countUpRef} />
-      <button onClick={start}>Start</button>
+     {/*  <button onClick={start}>Start</button>
       <button onClick={reset}>Reset</button>
       <button onClick={pauseResume}>Pause/Resume</button>
-      <button onClick={() => update(2000)}>Update to 2000</button>
+      <button onClick={() => update(2000)}>Update to 2000</button> */}
 
 
       <div className="arrival">
@@ -34,58 +35,14 @@ import './Count.css'
               <div className="picture">
                 <img 
                   className="img-fluid"
-                  src="https://picsum.photos/130/130?image=1027"
-                  alt=""
-                />
-              </div>
-              <div className="team-content" ref={countUpRef}>
-                <h3 className="name">Michele Miller</h3>
-                <h4 className="title">Web Developer</h4>
-              </div>
-              <ul className="social">
-                <li>
-                  <Link
-                    to="https://codepen.io/collection/XdWJOQ/"
-                    className="fa fa-facebook"
-                    aria-hidden="true"
-                  ></Link>
-                </li>
-                <li>
-                  <Link
-                    to="https://codepen.io/collection/XdWJOQ/"
-                    className="fa fa-twitter"
-                    aria-hidden="true"
-                  ></Link>
-                </li>
-                <li>
-                  <Link
-                    to="https://codepen.io/collection/XdWJOQ/"
-                    className="fa fa-google-plus"
-                    aria-hidden="true"
-                  ></Link>
-                </li>
-                <li>
-                  <Link
-                    to="https://codepen.io/collection/XdWJOQ/"
-                    className="fa fa-linkedin"
-                    aria-hidden="true"
-                  ></Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="col-12 col-sm-6 col-md-4 col-lg-3">
-            <div className="our-team">
-              <div className="picture">
-                <img
-                  className="img-fluid"
-                  src="https://picsum.photos/130/130?image=839"
+                  src="https://clearaction.com/wp-content/uploads/group2-hi5_25902484-300x300.jpg"
                   alt=""
                 />
               </div>
               <div className="team-content">
-                <h3 className="name">Patricia Knott</h3>
-                <h4 className="title">Web Developer</h4>
+                <div  ref={countUpRef}></div>
+                <h3 className="name">Employee</h3>
+                <h4 className="title"> </h4>
               </div>
               <ul className="social">
                 <li>
@@ -124,13 +81,60 @@ import './Count.css'
               <div className="picture">
                 <img
                   className="img-fluid"
-                  src="https://picsum.photos/130/130?image=856"
+                  src="https://www.jerseyshoremoving.com/wp-content/uploads/2015/04/Moving-Storage-Services-Neptune-300x300.jpg"
+                  alt=""
+                />
+              </div>
+              <div className="team-content">
+                <div  ref={countUpRef}></div>
+                <h3 className="name">Storage on sold product</h3>
+                <h4 className="title"> </h4>
+              </div>
+              <ul className="social">
+                <li>
+                  <Link
+                    to="https://codepen.io/collection/XdWJOQ/"
+                    className="fa fa-facebook"
+                    aria-hidden="true"
+                  ></Link>
+                </li>
+                <li>
+                  <Link
+                    to="https://codepen.io/collection/XdWJOQ/"
+                    className="fa fa-twitter"
+                    aria-hidden="true"
+                  ></Link>
+                </li>
+                <li>
+                  <Link
+                    to="https://codepen.io/collection/XdWJOQ/"
+                    className="fa fa-google-plus"
+                    aria-hidden="true"
+                  ></Link>
+                </li>
+                <li>
+                  <Link
+                    to="https://codepen.io/collection/XdWJOQ/"
+                    className="fa fa-linkedin"
+                    aria-hidden="true"
+                  ></Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div className="our-team">
+              <div className="picture">
+                <img
+                  className="img-fluid"
+                  src="https://i.ibb.co/vkKHKYK/EFCO-Brochure-Images-2019-5-PUe2019-300x300.jpg"
                   alt=" "
                 />
               </div>
               <div className="team-content">
-                <h3 className="name">Justin Ramos</h3>
-                <h4 className="title">Web Developer</h4>
+                <div  ref={countUpRef}></div>
+                <h3 className="name">Deliver on the world</h3>
+                <h4 className="title"> </h4>
               </div>
               <ul className="social">
                 <li>
@@ -169,13 +173,14 @@ import './Count.css'
               <div className="picture">
                 <img
                   className="img-fluid"
-                  src="https://picsum.photos/130/130?image=836"
+                  src="https://i.ibb.co/Q9S1Q39/IMG-9873-300x300.jpg"
                   alt=""
                 />
               </div>
               <div className="team-content">
-                <h3 className="name">Mary Huntley</h3>
-                <h4 className="title">Web Developer</h4>
+              <div  ref={countUpRef}></div>
+                <h3 className="name"> All over outlet</h3>
+                <h4 className="title"> </h4>
               </div>
               <ul className="social">
                 <li>
