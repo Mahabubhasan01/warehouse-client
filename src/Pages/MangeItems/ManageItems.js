@@ -5,24 +5,41 @@ import useItemDetail from "../CustomHooks/useItemDetail";
 import { toast } from "react-toastify";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
-import useMyItmes from "../CustomHooks/useMyItems";
 import CustomSubmit from "./CustomSubmit/CustomSubmit";
 
 const ManageItems = () => {
   const [user, loading, error] = useAuthState(auth);
   
 
-  let { id } = useParams();
+  const { id } = useParams();
   const [item] = useItemDetail(id);
   const navigate = useNavigate();
-  const [addItems] = useMyItmes();
-/*   const [itemsWithQuantity] = addItems.find(items=>items.name == item.name);
- */  console.log(addItems)
- const [addQ,setAddq] = useState(133)
-  const addQuantity = () =>{
-    setAddq(parseInt(addItems+1))
+  const [plus,setPlus] = useState()
+  const handleDeliver =()=>{
+    let deliver = 1
+    let quantityPase = parseInt(item.quantity);
+    let quantity = quantityPase  + deliver;
+    const productInfo ={
+      name:item.name,
+      img:item.img,
+      price:item.price,
+      info:item.info,
+      supplier:item.supplier,
+      quantity:quantity
+
+    }
+    const url = `http://localhost:5000/product/${id}`
+    fetch(url,{
+      method:"PUT",
+      headers:{
+        "content-type":"application/json"
+      },
+      body:JSON.stringify(productInfo)
+    }).then(res=>res.json()).then(data=>{
+      console.log(data)
+      setPlus(data)
+    })
   }
-  console.log(item);
   return (
     <div>
       <div className="mt-5">
@@ -35,21 +52,21 @@ const ManageItems = () => {
             <div className="card-body">
               <h5 className="card-title">Name : {item.name}</h5>
               <p className="card-text"> Information : {item.info}</p>
-              <p className="card-text"> Quantity : {addQ}</p>
+              <p className="card-text"> Quantity : {item.quantity}</p>
               <p className="card-text">
                 <small className="text-muted"> Supplier : {item.supplier}</small>
                 
               </p>
-              <p className="btn-two"><button onClick={()=>addQuantity} className="btn-product">Stock In</button>
-          <button onClick={()=>addQuantity} className="btn-product">Deliver</button>
-           <button className="btn-product" onClick={()=>navigate(`/payment/${item._id}`)}
+              <p className="btn-two"><button onClick={()=>handleDeliver} className="btn-product">Stock In</button>
+          <button className="btn-product">Deliver</button>
+           <button className="btn-product" onClick={()=>navigate(`/payment`)}
           >Checkout</button></p>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <CustomSubmit></CustomSubmit>
+    {/* <CustomSubmit></CustomSubmit> */}
     </div>
   );
 };

@@ -6,6 +6,12 @@
   box-sizing: border-box;
   font-family: "Poppins" , sans-serif;
 }
+body{
+  background-image: url(https://www.besthf.com/bcassets/bcpublic_2/Background_right_side.jpg);
+}
+footer{
+  background-color: #e3e3e3;
+}
 .contact-box{
   min-height: 100vh;
   width: 100%;
@@ -115,7 +121,6 @@
 .button input[type="button"]:hover{
   background: #5029bc;
 }
-
 @media (max-width: 950px) {
   .container-contact{
     width: 90%;

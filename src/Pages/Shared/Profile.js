@@ -25,7 +25,6 @@ const Profile = () => {
               <li>Your phone no {user ? user?.phoneNumber: "01853452432"}</li>
               <li> Jwt have three parts header payload and signature.</li>
               <li>
-                
                 Its secure user single token like script and its maintain
                 individual user or admin.
               </li>

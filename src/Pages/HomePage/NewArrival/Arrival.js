@@ -19,8 +19,8 @@ const Arrival = () => {
                 />
               </div>
               <div className="team-content">
-                <h3 className="name">Michele Miller</h3>
-                <h4 className="title">Web Developer</h4>
+                <h3 className="name">Accent</h3>
+                <h4 className="title"> </h4>
               </div>
               <ul className="social">
                 <li>
@@ -64,8 +64,8 @@ const Arrival = () => {
                 />
               </div>
               <div className="team-content">
-                <h3 className="name">Patricia Knott</h3>
-                <h4 className="title">Web Developer</h4>
+                <h3 className="name">Club</h3>
+                <h4 className="title"> </h4>
               </div>
               <ul className="social">
                 <li>
@@ -109,8 +109,8 @@ const Arrival = () => {
                 />
               </div>
               <div className="team-content">
-                <h3 className="name">Justin Ramos</h3>
-                <h4 className="title">Web Developer</h4>
+                <h3 className="name">Swible Glide</h3>
+                <h4 className="title"> </h4>
               </div>
               <ul className="social">
                 <li>
@@ -154,8 +154,8 @@ const Arrival = () => {
                 />
               </div>
               <div className="team-content">
-                <h3 className="name">Mary Huntley</h3>
-                <h4 className="title">Web Developer</h4>
+                <h3 className="name">Swivel Barrel</h3>
+                <h4 className="title"> </h4>
               </div>
               <ul className="social">
                 <li>
@@ -199,8 +199,8 @@ const Arrival = () => {
                 />
               </div>
               <div className="team-content">
-                <h3 className="name">Mary Huntley</h3>
-                <h4 className="title">Web Developer</h4>
+                <h3 className="name">Wingback</h3>
+                <h4 className="title"> </h4>
               </div>
               <ul className="social">
                 <li>
@@ -244,8 +244,8 @@ const Arrival = () => {
                 />
               </div>
               <div className="team-content">
-                <h3 className="name">Mary Huntley</h3>
-                <h4 className="title">Web Developer</h4>
+                <h3 className="name">Barstools</h3>
+                <h4 className="title"> </h4>
               </div>
               <ul className="social">
                 <li>
@@ -289,8 +289,8 @@ const Arrival = () => {
                 />
               </div>
               <div className="team-content">
-                <h3 className="name">Mary Huntley</h3>
-                <h4 className="title">Web Developer</h4>
+                <h3 className="name">Dinning</h3>
+                <h4 className="title"> </h4>
               </div>
               <ul className="social">
                 <li>
@@ -334,8 +334,8 @@ const Arrival = () => {
                 />
               </div>
               <div className="team-content">
-                <h3 className="name">Mary Huntley</h3>
-                <h4 className="title">Web Developer</h4>
+                <h3 className="name">Chair sleepers</h3>
+                <h4 className="title"> </h4>
               </div>
               <ul className="social">
                 <li>
