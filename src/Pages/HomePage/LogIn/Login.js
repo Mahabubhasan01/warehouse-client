@@ -45,9 +45,7 @@ const Login = () => {
   if (loading || Fbloading || Twloading || loading1) {
     return <Loading></Loading>;
   }
-  if (error || error1 || Fberror || Twerror) {
-    toast(<p> Error : {error?.message}</p>);
-  }
+  
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -65,6 +63,9 @@ const Login = () => {
       toast("please enter  email address");
     }
   };
+  if (error || error1 || Fberror || Twerror) {
+    toast.error(<p> Error : {error?.message} invalid credentials</p>);
+  }
 
   return (
     <div>

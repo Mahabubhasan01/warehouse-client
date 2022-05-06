@@ -371,6 +371,7 @@ const Arrival = () => {
           </div>
         </div>
       </div>
+      <hr />
     </div>
   );
 };

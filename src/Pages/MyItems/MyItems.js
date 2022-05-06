@@ -5,7 +5,7 @@ const MyItems = () => {
     const {id} = useParams()
     const [myItems,setMyItem] = useState({});
     useEffect(()=>{
-        const url =`http://localhost:5000/myItems`
+        const url =`https://cryptic-plains-63507.herokuapp.com/myItems`
         fetch(url).then(res=>res.json()).then(data=>setMyItem(data))
     },[])
     console.log(myItems)

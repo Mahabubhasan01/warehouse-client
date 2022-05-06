@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import './ManageItems.css'
 import { useNavigate, useParams } from "react-router-dom";
 import useItemDetail from "../CustomHooks/useItemDetail";
@@ -12,12 +12,17 @@ const ManageItems = () => {
   
 
   const { id } = useParams();
-  const [item] = useItemDetail(id);
+  const [item,setItem] = useState({});
+    useEffect(()=>{
+        const url =`https://cryptic-plains-63507.herokuapp.com/product/${id}`
+        fetch(url).then(res=>res.json()).then(data=>setItem(data))
+    },[])
   const navigate = useNavigate();
-  const [plus,setPlus] = useState()
-  const handleDeliver =()=>{
+
+  console.log(item._id)
+  const handleDeliver =(id)=>{
     let deliver = 1
-    let quantityPase = parseInt(item.quantity);
+    let quantityPase = parseInt(item?.quantity);
     let quantity = quantityPase  + deliver;
     const productInfo ={
       name:item.name,
@@ -28,7 +33,7 @@ const ManageItems = () => {
       quantity:quantity
 
     }
-    const url = `http://localhost:5000/product/${id}`
+    const url = `https://cryptic-plains-63507.herokuapp.com/product/${id}`
     fetch(url,{
       method:"PUT",
       headers:{
@@ -36,8 +41,8 @@ const ManageItems = () => {
       },
       body:JSON.stringify(productInfo)
     }).then(res=>res.json()).then(data=>{
-      console.log(data)
-      setPlus(data)
+      setItem(data)
+      
     })
   }
   return (
@@ -57,7 +62,7 @@ const ManageItems = () => {
                 <small className="text-muted"> Supplier : {item.supplier}</small>
                 
               </p>
-              <p className="btn-two"><button onClick={()=>handleDeliver} className="btn-product">Stock In</button>
+              <p className="btn-two"><button onClick={()=>handleDeliver(`${item._id}`)} className="btn-product">Stock In</button>
           <button className="btn-product">Deliver</button>
            <button className="btn-product" onClick={()=>navigate(`/payment`)}
           >Checkout</button></p>

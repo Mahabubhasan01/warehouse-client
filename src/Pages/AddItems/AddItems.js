@@ -15,7 +15,7 @@ const AddItems = () => {
     console.log(data)
     
     if(data){
-      const url = `http://localhost:5000/product`;
+      const url = `https://cryptic-plains-63507.herokuapp.com/product`;
       fetch(url,{
         method:'POST',
         headers:{'content-type':'application/json'},

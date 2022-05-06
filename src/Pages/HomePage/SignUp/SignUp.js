@@ -50,7 +50,7 @@ const SignUp = () => {
     }
 
     if(error|| error1||Fberror||Twerror){
-      toast(<p> Error : {error?.message} invalid credentials</p>)
+      toast.error(<p> Error : {error?.message} invalid credentials</p>)
     }
 
 

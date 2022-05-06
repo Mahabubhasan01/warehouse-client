@@ -23,7 +23,7 @@ const Contact = () => {
     const email = event.target.email.value;
     const text = event.target.message.value; */
     const contactInfo = {name,email,text}
-    const url = `http://localhost:5000/contact`
+    const url = `https://cryptic-plains-63507.herokuapp.com/contact`
     fetch(url,{
       method : 'POST',
       headers:{

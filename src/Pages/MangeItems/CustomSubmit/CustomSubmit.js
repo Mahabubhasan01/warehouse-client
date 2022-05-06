@@ -10,7 +10,7 @@ const CustomSubmit = () => {
 
   // form submit
   const onSubmit = (data, event) => {
-    const url = `http://localhost:5000/myItems`;
+    const url = `https://cryptic-plains-63507.herokuapp.com/myItems`;
     fetch(url, {
       method: "POST",
       headers: {
