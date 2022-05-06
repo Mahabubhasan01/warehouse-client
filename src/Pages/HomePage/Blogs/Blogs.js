@@ -83,10 +83,15 @@ const Blogs = () => {
       <div class="card border-danger mb-3 col-12 col-sm-6 col-md-4 col-lg-4 my-3 mx-0 " >
         <div class="card-header">What is the purpose of jwt and how does it work</div>
         <div class="card-body text-danger">
-          <h5 class="card-title">Danger card title</h5>
+          <h5 class="card-title">Json web token ~jwt</h5>
           <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+          <ul>
+                <ol>Json web token called jwt its maintain high security of sharing json api data </ol>
+                <li> Under the jwt using cryptography like hash algorithm</li>
+                <li> Its work for data data control by one valid user </li>
+                <li> Jwt have three parts header payload and signature</li>
+                <li> Its secure user single token like script and its maintain individual user or admin</li>
+            </ul>
           </p>
         </div>
       </div>
