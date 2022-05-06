@@ -194,7 +194,7 @@ const Arrival = () => {
               <div className="picture">
                 <img
                   className="img-fluid"
-                  src="https://i.ibb.co/DYNmSTG/11.jpg"
+                  src="https://i.ibb.co/gzBcc5R/benchmark-collections-planted-dezeen-collaboration-dezeen-2364-sq-300x300.webp"
                   alt=""
                 />
               </div>
@@ -239,7 +239,7 @@ const Arrival = () => {
               <div className="picture">
                 <img
                   className="img-fluid"
-                  src="https://i.ibb.co/DYNmSTG/11.jpg"
+                  src="https://i.ibb.co/n81mhWn/images.jpg"
                   alt=""
                 />
               </div>
@@ -284,7 +284,7 @@ const Arrival = () => {
               <div className="picture">
                 <img
                   className="img-fluid"
-                  src="https://i.ibb.co/DYNmSTG/11.jpg"
+                  src="https://i.ibb.co/cb79Vj5/outdoor-grande1.webp"
                   alt=""
                 />
               </div>
@@ -329,7 +329,7 @@ const Arrival = () => {
               <div className="picture">
                 <img
                   className="img-fluid"
-                  src="https://i.ibb.co/DYNmSTG/11.jpg"
+                  src="https://i.ibb.co/TkgkhJh/Modern-Round-Stool-For-Pubs-NEO-770026-E-2-300x300.jpg"
                   alt=""
                 />
               </div>

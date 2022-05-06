@@ -39,6 +39,14 @@ function App() {
         ></Route>
         <Route path="/signup" element={<SignUp />}></Route>
         <Route path="/login" element={<Login />}></Route>
+       {/*  <Route
+          path="/manageitems"
+          element={
+            <ProtectAuth>
+              <ManageItems />
+            </ProtectAuth>
+          }
+        ></Route> */}
         <Route
           path="/manageitems/:id"
           element={
