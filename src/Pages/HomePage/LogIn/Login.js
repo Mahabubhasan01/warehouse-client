@@ -63,7 +63,7 @@ const Login = () => {
       toast("please enter  email address");
     }
   };
-  if (error || error1 || Fberror || Twerror) {
+  if (error) {
     toast.error(<p> Error : {error?.message} invalid credentials</p>);
   }
 

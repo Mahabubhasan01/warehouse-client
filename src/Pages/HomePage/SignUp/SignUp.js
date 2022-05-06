@@ -49,7 +49,7 @@ const SignUp = () => {
       return <Loading></Loading>
     }
 
-    if(error|| error1||Fberror||Twerror){
+    if(error){
       toast.error(<p> Error : {error?.message} invalid credentials</p>)
     }
 
