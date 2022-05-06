@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Footer.css'
 const Footer = () => {
+  const navigate = useNavigate();
     return (
         <footer className="border-t border-gray-200">
           <hr />
@@ -22,7 +24,7 @@ const Footer = () => {
         <div
           className="flex-shrink-0 w-64 mx-auto text-center md:mx-0 md:text-left"
         >
-          <a to='/'
+          <button to='/'
             className="
               flex
               items-center
@@ -32,10 +34,11 @@ const Footer = () => {
               text-blue-700
               md:justify-start
               nav-logo
+              text-dark
             "
           >
             Eco Life
-          </a >
+          </button >
           <p className="mt-2 text-sm text-justify text-gray-500">
           I believe more and more that this business is about people. People, people. The idea is to make friends at the retail level, the warehouse level, let people see you exist, can form sentences and have an interest in something other than yourself.
           </p>
@@ -57,7 +60,7 @@ const Footer = () => {
             </button>
           </div>
           <div className="flex justify-center mt-4 lg:mt-2">
-            <a to="/">
+            <button to="/">
               <svg
                 fill="currentColor"
                 strokeLinecap="round"
@@ -70,8 +73,8 @@ const Footer = () => {
                   d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
                 ></path>
               </svg>
-            </a>
-            <a className="ml-3" to="/">
+            </button>
+            <button className="ml-3" to="/">
               <svg
                 fill="currentColor"
                 strokeLinecap="round"
@@ -84,8 +87,8 @@ const Footer = () => {
                   d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
                 ></path>
               </svg>
-            </a>
-            <a className="ml-3" to="/">
+            </button>
+            <button className="ml-3" to="/">
               <svg
                 fill="none"
                 stroke="currentColor"
@@ -100,8 +103,8 @@ const Footer = () => {
                   d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"
                 ></path>
               </svg>
-            </a>
-            <a className="ml-3" to="/">
+            </button>
+            <button className="ml-3" to="/">
               <svg
                 fill="currentColor"
                 stroke="currentColor"
@@ -117,7 +120,7 @@ const Footer = () => {
                 ></path>
                 <circle cx="4" cy="4" r="2" stroke="none"></circle>
               </svg>
-            </a>
+            </button>
           </div>
         </div>
 
@@ -128,35 +131,16 @@ const Footer = () => {
             </h2>
             <ul className="mb-8 space-y-2 text-sm list-none">
               <li>
-                <a to="/home" className="text-gray-600 hover:text-gray-800">Home</a>
+                <button onClick={()=>navigate("/")} className="text-gray-600 hover:text-gray-800">Home</button>
               </li>
               <li>
-                <a to="/home" className="text-gray-600 hover:text-gray-800">About Us</a>
+                <button to="/home" className="text-gray-600 hover:text-gray-800">About Us</button>
               </li>
               <li>
-                <a to="/home" className="text-gray-600 hover:text-gray-800">Blogs</a>
+                <button to="/blogs" className="text-gray-600 hover:text-gray-800">Blogs</button>
               </li>
               <li>
-                <a to="/home" className="text-gray-600 hover:text-gray-800">Contact Us</a>
-              </li>
-            </ul>
-          </div>
-          <div className="w-full px-4 lg:w-1/3 md:w-1/2">
-            <h2 className="mb-2 font-bold tracking-widest text-gray-900">
-              Useful as
-            </h2>
-            <ul className="mb-8 space-y-2 text-sm list-none">
-              <li>
-                <a to="/home" className="text-gray-600 hover:text-gray-800">Home</a>
-              </li>
-              <li>
-                <a to="/home" className="text-gray-600 hover:text-gray-800">About Us</a>
-              </li>
-              <li>
-                <a className="text-gray-600 hover:text-gray-800">Blogs</a>
-              </li>
-              <li>
-                <a to="/home" className="text-gray-600 hover:text-gray-800">Contact Us</a>
+                <button to="/contact" className="text-gray-600 hover:text-gray-800">Contact Us</button>
               </li>
             </ul>
           </div>
@@ -166,16 +150,36 @@ const Footer = () => {
             </h2>
             <ul className="mb-8 space-y-2 text-sm list-none">
               <li>
-                <a to="/home" className="text-gray-600 hover:text-gray-800">Home</a>
+                <button to="/home" className="text-gray-600 hover:text-gray-800">Overview</button>
               </li>
               <li>
-                <a to="/home" className="text-gray-600 hover:text-gray-800">About Us</a>
+                <button to="/home" className="text-gray-600 hover:text-gray-800">New arrival</button>
               </li>
               <li>
-                <a to="/home" className="text-gray-600 hover:text-gray-800">Blogs</a>
+                <button onClick={()=>navigate('/payment')} 
+                className="text-gray-600 hover:text-gray-800">Payment</button>
               </li>
               <li>
-                <a to="/home" className="text-gray-600 hover:text-gray-800">Contact Us</a>
+                <button to="/home" className="text-gray-600 hover:text-gray-800">Feedback</button>
+              </li>
+            </ul>
+          </div>
+          <div className="w-full px-4 lg:w-1/3 md:w-1/2">
+            <h2 className="mb-2 font-bold tracking-widest text-gray-900">
+              Useful as
+            </h2>
+            <ul className="mb-8 space-y-2 text-sm list-none">
+              <li>
+                <button to="/home" className="text-gray-600 hover:text-gray-800">Inventory</button>
+              </li>
+              <li>
+                <button to="/home" className="text-gray-600 hover:text-gray-800">Outdoor</button>
+              </li>
+              <li>
+                <button to="/home" className="text-gray-600 hover:text-gray-800">Indoor</button>
+              </li>
+              <li>
+                <button to="/home" className="text-gray-600 hover:text-gray-800">Office</button>
               </li>
             </ul>
           </div>
