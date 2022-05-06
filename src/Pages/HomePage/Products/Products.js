@@ -51,7 +51,7 @@ const Products = () => {
         </div>
       </div>
 
-      <div>
+      <div className="mb-10">
         <hr />
         <h1 className="text-center text-2xl mt-5">Outdoor Items</h1>
         <div className="hr"></div>

@@ -1,8 +1,8 @@
-.products{
+/* .products{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-gap: 10px;
-}
+} */
 .single-card{
     height: 550px;
     width: 350px;
@@ -50,7 +50,7 @@
     height: 35px;
     margin-bottom: 5px;
     font-weight:300;
-    margin-right: 5px;
+    margin-left: 20px;
     
 }
 .btn-product:hover{
