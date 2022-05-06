@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import {
-  
   useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
   useSignInWithFacebook,
   useSignInWithGoogle,
   useSignInWithTwitter,
-  
 } from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -28,46 +26,45 @@ const Login = () => {
   const handlePassword = (event) => {
     setPassword(event.target.value);
   };
-// use firebase hook for social
-const [signInWithFacebook, Fbuser, Fbloading, Fberror] =
-useSignInWithFacebook(auth);
-const [signInWithGoogle, user1, loading1, error1] = useSignInWithGoogle(auth);
+  // use firebase hook for social
+  const [signInWithFacebook, Fbuser, Fbloading, Fberror] =
+    useSignInWithFacebook(auth);
+  const [signInWithGoogle, user1, loading1, error1] = useSignInWithGoogle(auth);
 
-const [signInWithTwitter, Twuser, Twloading, Twerror] =
-useSignInWithTwitter(auth);
+  const [signInWithTwitter, Twuser, Twloading, Twerror] =
+    useSignInWithTwitter(auth);
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
-    if (user) {
-      navigate(from, { replace: true });
-    }
-
-  if(user1||Fbuser||Twuser){
-    navigate(from,{replace:true})
+  if (user) {
+    navigate(from, { replace: true });
   }
-  let errorMsg;
-  if(error){
-    errorMsg = toast(<p> Error : {error?.message}</p>)
+
+  if (user1 || Fbuser || Twuser) {
+    navigate(from, { replace: true });
+  }
+  if (loading || Fbloading || Twloading || loading1) {
+    return <Loading></Loading>;
+  }
+  if (error || error1 || Fberror || Twerror) {
+    toast(<p> Error : {error?.message}</p>);
   }
 
   const handleSubmit = (event) => {
     event.preventDefault();
     signInWithEmailAndPassword(email, password);
-
-    /* event.target.reset(); */
   };
-  
+
   if (loading) {
     return <Loading></Loading>;
   }
-  const resetPassword = async() => {
+  const resetPassword = async () => {
     if (email) {
-        await sendPasswordResetEmail(email);
-        toast('Sent email');
+      await sendPasswordResetEmail(email);
+      toast("Sent email");
+    } else {
+      toast("please enter  email address");
     }
-    else{
-        toast('please enter  email address');
-    }
-}
+  };
 
   return (
     <div>

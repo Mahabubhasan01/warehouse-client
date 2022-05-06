@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {
   useCreateUserWithEmailAndPassword,
-  useSendEmailVerification,
   useSignInWithFacebook,
   useSignInWithGoogle,
   useSignInWithTwitter,
@@ -12,7 +11,6 @@ import auth from "../../../firebase.init";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Loading from "../../Shared/Loading";
-import { async } from "@firebase/util";
 
 const SignUp = () => {
   const location = useLocation()
@@ -43,7 +41,6 @@ const SignUp = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
 
-    const [sendEmailVerification, sending, Verror] = useSendEmailVerification(auth);
     if(user||user1||Fbuser||Twuser){
       navigate(from,{replace:true})
     }
@@ -52,17 +49,17 @@ const SignUp = () => {
       return <Loading></Loading>
     }
 
-  let errorText;
+    if(error|| error1||Fberror||Twerror){
+      toast(<p> Error : {error?.message} invalid credentials</p>)
+    }
+
 
   const handleSubmit = async(event) => {
     event.preventDefault();
    await createUserWithEmailAndPassword(email, password);
     console.log(email, password);
     toast.success('Successfully register')
-   /* await sendEmailVerification(email,password); */
-   
-/*     event.target.reset();
- */  };
+  };
   
 
  
@@ -143,7 +140,7 @@ const SignUp = () => {
                 </svg>
               </div>
               <div
-                onClick={async() =>{await signInWithGoogle(email, password);navigate('/')}}
+                onClick={async() =>{await signInWithGoogle(email, password)}}
                 className="icon"
               >
                 <svg viewBox="0 0 24 24">
@@ -177,7 +174,7 @@ const SignUp = () => {
                 placeholder="Name"
                 required
               />
-              {errorText}
+            
               <input
                 onBlur={handleEmail}
                 type="email"

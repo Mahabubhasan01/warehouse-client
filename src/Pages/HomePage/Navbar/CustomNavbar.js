@@ -27,7 +27,7 @@ function classNames(...classes) {
 }
 
 export default function CustomNavbar() {
-  const [user, loading, error] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
   console.log(user)
   if(loading){
     return <Loading></Loading>
@@ -51,8 +51,8 @@ export default function CustomNavbar() {
                 </Disclosure.Button>
               </div>
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-                <div className="flex-shrink-0 flex items-center">
-                  <span className="text-white nav-logo" to='/home'>Eco Life</span>
+                <div className="flex-shrink-0 flex items-center" to='/'>
+                  <span className="text-white nav-logo" >Eco Life</span>
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
