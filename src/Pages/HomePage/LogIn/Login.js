@@ -53,7 +53,7 @@ useSignInWithTwitter(auth);
     event.preventDefault();
     signInWithEmailAndPassword(email, password);
 
-    event.target.reset();
+    /* event.target.reset(); */
   };
   
   if (loading) {

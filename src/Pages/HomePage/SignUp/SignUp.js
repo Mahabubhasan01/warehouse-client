@@ -30,7 +30,7 @@ const SignUp = () => {
     setEmail(event.target.value);
   };
   const handlePassword = (event) => {
-    setEmail(event.target.value);
+    setPassword(event.target.value);
   };
   // use firebase hook for social
   const [signInWithFacebook, Fbuser, Fbloading, Fberror] =
@@ -59,10 +59,10 @@ const SignUp = () => {
    await createUserWithEmailAndPassword(email, password);
     console.log(email, password);
     toast.success('Successfully register')
-   await sendEmailVerification(email,password);
+   /* await sendEmailVerification(email,password); */
    
-    event.target.reset();
-  };
+/*     event.target.reset();
+ */  };
   
 
  
