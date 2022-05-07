@@ -70,7 +70,7 @@ const AddItems = () => {
         <p>Supplier</p>
 
         <input
-          placeholder="photo url"
+          placeholder="supplier name"
           className="mb-3"
           {...register("supplier", { required: true })}
         />
