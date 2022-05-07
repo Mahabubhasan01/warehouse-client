@@ -13,8 +13,8 @@ import "react-toastify/dist/ReactToastify.css";
 import Loading from "../../Shared/Loading";
 
 const SignUp = () => {
-  const location = useLocation()
-  const from = location?.state?.from?.pathname || '/'
+  const location = useLocation();
+  const from = location?.state?.from?.pathname || "/";
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -41,28 +41,24 @@ const SignUp = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
 
-    if(user||user1||Fbuser||Twuser){
-      navigate(from,{replace:true})
-    }
-  
-    if(loading||Fbloading||Twloading||loading1){
-      return <Loading></Loading>
-    }
+  if (user || user1 || Fbuser || Twuser) {
+    navigate(from, { replace: true });
+  }
 
-    if(error){
-      toast.error(<p> Error : {error?.message} invalid credentials</p>)
-    }
+  if (loading || Fbloading || Twloading || loading1) {
+    return <Loading></Loading>;
+  }
 
-
-  const handleSubmit = async(event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-   await createUserWithEmailAndPassword(email, password);
+    await createUserWithEmailAndPassword(email, password);
     console.log(email, password);
-    toast.success('Successfully register')
+    toast.success("Successfully register");
   };
-  
+  if (error) {
+    toast.error(<p> Error : {error?.message} invalid credentials</p>);
+  }
 
- 
   return (
     <div>
       <div className="container login-box">
@@ -140,7 +136,9 @@ const SignUp = () => {
                 </svg>
               </div>
               <div
-                onClick={async() =>{await signInWithGoogle(email, password)}}
+                onClick={async () => {
+                  await signInWithGoogle(email, password);
+                }}
                 className="icon"
               >
                 <svg viewBox="0 0 24 24">
@@ -155,7 +153,7 @@ const SignUp = () => {
                 onClick={() => signInWithTwitter(email, password)}
               >
                 <svg
-                  class="twitter"
+                  className="twitter"
                   fill="#000000"
                   height="24"
                   viewBox="0 0 24 24"
@@ -174,7 +172,7 @@ const SignUp = () => {
                 placeholder="Name"
                 required
               />
-            
+
               <input
                 onBlur={handleEmail}
                 type="email"

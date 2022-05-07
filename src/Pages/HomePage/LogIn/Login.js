@@ -45,11 +45,10 @@ const Login = () => {
   if (loading || Fbloading || Twloading || loading1) {
     return <Loading></Loading>;
   }
-  
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    signInWithEmailAndPassword(email, password);
+   await signInWithEmailAndPassword(email, password);
   };
 
   if (loading) {
@@ -159,7 +158,7 @@ const Login = () => {
                 onClick={() => signInWithTwitter(email, password)}
               >
                 <svg
-                  class="twitter"
+                  className="twitter"
                   fill="#000000"
                   height="24"
                   viewBox="0 0 24 24"

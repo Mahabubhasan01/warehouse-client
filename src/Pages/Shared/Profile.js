@@ -7,31 +7,28 @@ import "./Profile.css";
 const Profile = () => {
   let [user, loading, error] = useAuthState(auth);
 
-
   return (
     <div className="profile">
-
       <div className="profile-box">
-      <div class="card border-danger   ">
-        <div class="card-header">
-          Hello {user?.displayName}
+        <div className="card border-danger   ">
+          <div className="card-header">Hello {user?.displayName}</div>
+          <div className="card-body text-danger">
+            <h5 className="card-title">{user?.displayName}</h5>
+            <p className="card-text">
+              <ul>
+                <li> Your email {user?.email}</li>
+                <li>
+                  Your phone no {user ? user?.phoneNumber : "01853452432"}
+                </li>
+                <li> Jwt have three parts header payload and signature.</li>
+                <li>
+                  Its secure user single token like script and its maintain
+                  individual user or admin.
+                </li>
+              </ul>
+            </p>
+          </div>
         </div>
-        <div class="card-body text-danger">
-          <h5 class="card-title">{user?.displayName}</h5>
-          <p class="card-text">
-            <ul>
-              
-              <li> Your email {user?.email}</li>
-              <li>Your phone no {user ? user?.phoneNumber: "01853452432"}</li>
-              <li> Jwt have three parts header payload and signature.</li>
-              <li>
-                Its secure user single token like script and its maintain
-                individual user or admin.
-              </li>
-            </ul>
-          </p>
-        </div>
-      </div>
       </div>
       <nav
         id="sidebarMenu"
@@ -141,7 +138,7 @@ const Profile = () => {
           <Link className="navbar-brand" to="/">
             <img
               src="https://i.ibb.co/FzfFN76/logo.png"
-              style={{ height: "50px" ,backgroundColor:"black"}}
+              style={{ height: "50px", backgroundColor: "black" }}
               alt="MDB Logo"
               loading="lazy"
             />

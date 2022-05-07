@@ -3,47 +3,47 @@ import "./Payment.css";
 const Payment = () => {
   return (
     <div>
-      <div class="container-payment">
+      <div className="container-payment">
         <form>
-          <div class="row">
+          <div className="row">
             <h4>Account</h4>
-            <div class="input-group input-group-icon">
+            <div className="input-group input-group-icon">
               <input type="text" placeholder="Full Name" />
-              <div class="input-icon">
-                <i class="fa fa-user"></i>
+              <div className="input-icon">
+                <i className="fa fa-user"></i>
               </div>
             </div>
-            <div class="input-group input-group-icon">
+            <div className="input-group input-group-icon">
               <input type="email" placeholder="Email Adress" />
-              <div class="input-icon">
-                <i class="fa fa-envelope"></i>
+              <div className="input-icon">
+                <i className="fa fa-envelope"></i>
               </div>
             </div>
-            <div class="input-group input-group-icon">
+            <div className="input-group input-group-icon">
               <input type="password" placeholder="Password" />
-              <div class="input-icon">
-                <i class="fa fa-key"></i>
+              <div className="input-icon">
+                <i className="fa fa-key"></i>
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-half">
+          <div className="row">
+            <div className="col-half">
               <h4>Date of Birth</h4>
-              <div class="input-group">
-                <div class="col-third">
+              <div className="input-group">
+                <div className="col-third">
                   <input type="text" placeholder="DD" />
                 </div>
-                <div class="col-third">
+                <div className="col-third">
                   <input type="text" placeholder="MM" />
                 </div>
-                <div class="col-third">
+                <div className="col-third">
                   <input type="text" placeholder="YYYY" />
                 </div>
               </div>
             </div>
-            <div class="col-half">
+            <div className="col-half">
               <h4>Gender</h4>
-              <div class="input-group">
+              <div className="input-group">
                 <input
                   id="gender-male"
                   type="radio"
@@ -61,9 +61,9 @@ const Payment = () => {
               </div>
             </div>
           </div>
-          <div class="row">
+          <div className="row">
             <h4>Payment Details</h4>
-            <div class="input-group">
+            <div className="input-group">
               <input
                 id="payment-method-card"
                 type="radio"
@@ -73,7 +73,7 @@ const Payment = () => {
               />
               <label for="payment-method-card">
                 <span>
-                  <i class="fa fa-cc-visa"></i>Credit Card
+                  <i className="fa fa-cc-visa"></i>Credit Card
                 </span>
               </label>
               <input
@@ -85,26 +85,26 @@ const Payment = () => {
               <label for="payment-method-paypal">
                 {" "}
                 <span>
-                  <i class="fa fa-cc-paypal"></i>Paypal
+                  <i className="fa fa-cc-paypal"></i>Paypal
                 </span>
               </label>
             </div>
-            <div class="input-group input-group-icon">
+            <div className="input-group input-group-icon">
               <input type="text" placeholder="Card Number" />
-              <div class="input-icon">
-                <i class="fa fa-credit-card"></i>
+              <div className="input-icon">
+                <i className="fa fa-credit-card"></i>
               </div>
             </div>
-            <div class="col-half">
-              <div class="input-group input-group-icon">
+            <div className="col-half">
+              <div className="input-group input-group-icon">
                 <input type="text" placeholder="Card CVC" />
-                <div class="input-icon">
-                  <i class="fa fa-user"></i>
+                <div className="input-icon">
+                  <i className="fa fa-user"></i>
                 </div>
               </div>
             </div>
-            <div class="col-half">
-              <div class="input-group">
+            <div className="col-half">
+              <div className="input-group">
                 <select>
                   <option>01 Jan</option>
                   <option>02 Jan</option>
@@ -116,9 +116,9 @@ const Payment = () => {
               </div>
             </div>
           </div>
-          <div class="row">
+          <div className="row">
             <h4>Terms and Conditions</h4>
-            <div class="input-group">
+            <div className="input-group">
               <input id="terms" type="checkbox" />
               <label for="terms">
                 I accept the terms and conditions for signing up to this

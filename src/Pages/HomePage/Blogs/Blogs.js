@@ -4,12 +4,15 @@ const Blogs = () => {
   return (
     <div className="row container">
       <div
-        class="card border-primary mb-3 col-12 col-sm-6 col-md-3 col-lg-4 my-3 mx-0 
+        className="card border-primary mb-3 col-12 col-sm-6 col-md-3 col-lg-4 my-3 mx-0 
       "
       >
-        <div class="card-header"> Difference between javascript and nodejs</div>
-        <div class="card-body text-dark">
-          <p class="card-text">
+        <div className="card-header">
+          {" "}
+          Difference between javascript and nodejs
+        </div>
+        <div className="card-body text-dark">
+          <p className="card-text">
             <h1 className="text-center text-info">Javascript</h1>
             <ul>
               <ol> Javascript is programming language.</ol>
@@ -41,12 +44,12 @@ const Blogs = () => {
           </p>
         </div>
       </div>
-      <div class="card border-secondary mb-3 col-12 col-sm-6 col-md-3 col-lg-4 my-3 mx-0 ">
-        <div class="card-header">
+      <div className="card border-secondary mb-3 col-12 col-sm-6 col-md-3 col-lg-4 my-3 mx-0 ">
+        <div className="card-header">
           When should you use nodejs and when should you use mongodb
         </div>
-        <div class="card-body text-secondary">
-          <p class="card-text">
+        <div className="card-body text-secondary">
+          <p className="card-text">
             <h1 className="text-center text-info">Mongodb</h1>
             <ol>
               <li>Mongodb is open source databases.</li>
@@ -90,12 +93,12 @@ const Blogs = () => {
           </p>
         </div>
       </div>
-      <div class="card border-success mb-3 col-12 col-sm-6 col-md-3 col-lg-4 my-3 mx-0 ">
-        <div class="card-header">
+      <div className="card border-success mb-3 col-12 col-sm-6 col-md-3 col-lg-4 my-3 mx-0 ">
+        <div className="card-header">
           Differences between sql and nosql databases.
         </div>
-        <div class="card-body text-success">
-          <p class="card-text">
+        <div className="card-body text-success">
+          <p className="card-text">
             <h1 className="text-center text-info">Sql </h1>
             <ol>
               <li>There lot of database sql one of them.</li>
@@ -123,13 +126,13 @@ const Blogs = () => {
           </p>
         </div>
       </div>
-      <div class="card border-danger mb-3 mr-2 col-12 col-sm-6 col-md-3 col-lg-4 my-3 mx-0 ">
-        <div class="card-header">
+      <div className="card border-danger mb-3 mr-2 col-12 col-sm-6 col-md-3 col-lg-4 my-3 mx-0 ">
+        <div className="card-header">
           What is the purpose of jwt and how does it work
         </div>
-        <div class="card-body text-danger">
-          <h5 class="card-title">Json web token ~jwt</h5>
-          <p class="card-text">
+        <div className="card-body text-danger">
+          <h5 className="card-title">Json web token ~jwt</h5>
+          <p className="card-text">
             <ul>
               <ol>
                 Json web token called jwt its maintain high security of sharing

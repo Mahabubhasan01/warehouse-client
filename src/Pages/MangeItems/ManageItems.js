@@ -8,10 +8,9 @@ import auth from "../../firebase.init";
 import CustomSubmit from "./CustomSubmit/CustomSubmit";
 
 const ManageItems = () => {
-  const [user, loading, error] = useAuthState(auth);
-  
-
+  const [user] = useAuthState(auth);
   const { id } = useParams();
+  console.log(id)
   const [item,setItem] = useState({});
     useEffect(()=>{
         const url =`https://cryptic-plains-63507.herokuapp.com/product/${id}`
@@ -19,12 +18,12 @@ const ManageItems = () => {
     },[])
   const navigate = useNavigate();
 
-  console.log(item._id)
-  const handleDeliver =(id)=>{
+  const handleDeliver =()=>{
     let deliver = 1
     let quantityPase = parseInt(item?.quantity);
     let quantity = quantityPase  + deliver;
     const productInfo ={
+      email:user.email,
       name:item.name,
       img:item.img,
       price:item.price,
@@ -33,7 +32,7 @@ const ManageItems = () => {
       quantity:quantity
 
     }
-    const url = `https://cryptic-plains-63507.herokuapp.com/product/${id}`
+    const url = `https://cryptic-plains-63507.herokuapp.com/product${id}`
     fetch(url,{
       method:"PUT",
       headers:{
@@ -41,6 +40,7 @@ const ManageItems = () => {
       },
       body:JSON.stringify(productInfo)
     }).then(res=>res.json()).then(data=>{
+      console.log(data)
       setItem(data)
       
     })
@@ -60,9 +60,11 @@ const ManageItems = () => {
               <p className="card-text"> Quantity : {item.quantity}</p>
               <p className="card-text">
                 <small className="text-muted"> Supplier : {item.supplier}</small>
-                
               </p>
-              <p className="btn-two"><button onClick={()=>handleDeliver(`${item._id}`)} className="btn-product">Stock In</button>
+
+              <p className="w-50 "><input type="number" name="number" id=""  placeholder="add quantity"/></p>
+
+              <p className="btn-two"><button onClick={()=>handleDeliver} className="btn-product">Stock In</button>
           <button className="btn-product">Deliver</button>
            <button className="btn-product" onClick={()=>navigate(`/payment`)}
           >Checkout</button></p>

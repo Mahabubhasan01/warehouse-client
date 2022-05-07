@@ -12,6 +12,9 @@ figure {
   animation: flash 2.4s linear infinite;
   opacity: 0;
 }
+.gif{
+  margin: 0 auto;
+}
 .dot {
   position: absolute;
   margin: auto;

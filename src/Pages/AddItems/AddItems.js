@@ -7,7 +7,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 
 const AddItems = () => {
-  const [user, loading, error] = useAuthState(auth);
+  const [user] = useAuthState(auth);
 
   const { register, handleSubmit } = useForm();
   const onSubmit = (data,event) => {
@@ -22,11 +22,11 @@ const AddItems = () => {
         body:JSON.stringify(data)
       }).then(res=>res.json()).then(product=>console.log(product))
       toast.success('Successfully added new product')
-      event.target.reset()
     }
     else{
       toast('Opps please insert value below!!')
     }
+    event.target.reset()
   };
 
   return (
