@@ -1,15 +1,9 @@
 import React, { useEffect, useState } from "react";
 import './ManageItems.css'
 import { useNavigate, useParams } from "react-router-dom";
-import useItemDetail from "../CustomHooks/useItemDetail";
-import { toast } from "react-toastify";
-import { useAuthState } from "react-firebase-hooks/auth";
-import auth from "../../firebase.init";
-import CustomSubmit from "./CustomSubmit/CustomSubmit";
 
 const ManageItems = () => {
-  const [user] = useAuthState(auth);
-  const { id } = useParams();
+  let { id } = useParams();
   console.log(id)
   const [item,setItem] = useState({});
     useEffect(()=>{
@@ -18,12 +12,32 @@ const ManageItems = () => {
     },[])
   const navigate = useNavigate();
 
+  const handleUpdate=(event)=>{
+    const q =event.target.number.value;
+    const parseQ = parseInt(q)
+    const updateQuantity ={parseQ}
+
+
+
+    let url = `https://cryptic-plains-63507.herokuapp.com/product/${id}`
+    fetch(url,{
+      method:"PUT",
+      headers:{
+        "content-type":"application/json"
+      },
+      body:JSON.stringify(updateQuantity)
+    }).then(res=>res.json()).then(data=>{
+      console.log(data)
+      setItem(data)
+      
+    })
+  }
+
   const handleDeliver =()=>{
     let deliver = 1
     let quantityPase = parseInt(item?.quantity);
-    let quantity = quantityPase  + deliver;
+    let quantity = quantityPase  - deliver;
     const productInfo ={
-      email:user.email,
       name:item.name,
       img:item.img,
       price:item.price,
@@ -32,7 +46,7 @@ const ManageItems = () => {
       quantity:quantity
 
     }
-    const url = `https://cryptic-plains-63507.herokuapp.com/product${id}`
+    const url = `https://cryptic-plains-63507.herokuapp.com/product/${id}`
     fetch(url,{
       method:"PUT",
       headers:{
@@ -45,6 +59,7 @@ const ManageItems = () => {
       
     })
   }
+
   return (
     <div>
       <div className="mt-5">
@@ -64,8 +79,9 @@ const ManageItems = () => {
 
               <p className="w-50 "><input type="number" name="number" id=""  placeholder="add quantity"/></p>
 
-              <p className="btn-two"><button onClick={()=>handleDeliver} className="btn-product">Stock In</button>
-          <button className="btn-product">Deliver</button>
+              <p className="btn-two">
+                <button  className="btn-product" onClick={()=>handleUpdate}>Stock In</button>
+          <button className="btn-product" onClick={()=> handleDeliver}>Deliver</button>
            <button className="btn-product" onClick={()=>navigate(`/payment`)}
           >Checkout</button></p>
             </div>
@@ -76,6 +92,7 @@ const ManageItems = () => {
     {/* <CustomSubmit></CustomSubmit> */}
     </div>
   );
-};
+}
+
 
 export default ManageItems;

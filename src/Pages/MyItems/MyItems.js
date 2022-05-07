@@ -1,23 +1,29 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import useProductsHook from '../CustomHooks/ProductsHook'
+import MyItem from './MyItem';
 
 const MyItems = () => {
-    const {id} = useParams()
-    const [myItems,setMyItem] = useState({});
-    useEffect(()=>{
-        const url =`https://cryptic-plains-63507.herokuapp.com/myItems`
-        fetch(url).then(res=>res.json()).then(data=>setMyItem(data))
-    },[])
-    console.log(myItems)
+    const [products] = useProductsHook();
+    const navigate = useNavigate()
+    console.log(products)
 
-
+    
     return (
         <div>
-           <h1>my items is here {myItems.length}</h1>
-           {/* {
-               myItems.map(i=><h1>{i.name}</h1>)
-           } */}
+            <h3 className='text-center text-2xl mt-4'>Total Items : <span className='text-green-600'>{products.length}</span></h3>
+            <div className='row container my-5 mx-auto'>
+            {
+                products.map(item=><MyItem
+                key={item._id}
+                item={item}
+                ></MyItem>)
+            }
         </div>
+        <p><button onClick={()=>navigate('/additems')}
+         className='btn-add '>Add new items</button></p>
+        </div>
+        
     );
 };
 

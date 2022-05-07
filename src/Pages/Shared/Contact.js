@@ -19,9 +19,6 @@ const Contact = () => {
   const handleContact = event=>{
     event.preventDefault()
     console.log(handleContact)
-    /* const name = event.target.name.value;
-    const email = event.target.email.value;
-    const text = event.target.message.value; */
     const contactInfo = {name,email,text}
     const url = `https://cryptic-plains-63507.herokuapp.com/contact`
     fetch(url,{
@@ -31,8 +28,6 @@ const Contact = () => {
       },
       body:JSON.stringify(contactInfo)
     }).then(res=>res.json()).then(result=>{console.log(result)})
-
-    
     toast('Thanks for your feedback')
   }
   return (

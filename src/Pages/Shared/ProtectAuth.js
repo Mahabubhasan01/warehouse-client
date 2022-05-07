@@ -20,13 +20,13 @@ const ProtectAuth = ({ children }) => {
   if (!user) {
     return <Navigate to="/login" state={{ from: location }} replace />;
   }
-  if (user?.providerData[0]?.providerId === "password" && !user?.emailVerified) {
+  /* if (user?.providerData[0]?.providerId === "password" && !user?.emailVerified) {
     return (
       <div className="single-card mt-5 mx-auto">
-        <h3 className="text-danger">Email is not verified</h3>
-        <h5 className="text-success"> Please Verify email </h5>
+        <h3 className="text-danger text-center">Email is not verified</h3>
+        <h5 className="text-success text-center"> Please Verify email </h5>
         <button
-          className="btn-product"
+          className="btn btn-info"
           onClick={async () => {
             await sendEmailVerification();
             toast("Sent email");
@@ -36,7 +36,7 @@ const ProtectAuth = ({ children }) => {
         </button>
       </div>
     );
-  }
+  } */
 
   return children;
 };
